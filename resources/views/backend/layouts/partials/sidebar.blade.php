@@ -96,7 +96,19 @@ $role = session('roll');
                   <i class="menu-bullet menu-bullet-dot">
                     <span></span>
                   </i>
-                  <span class="menu-text">{{$project->projectTitle}}</span>
+                  <?php
+                  if (session('locale') == 'bn') {
+                    $getproject = DB::table('dcs.projects')->where('projectTitle', $project->projectTitle)->get();
+                    if ($getproject->isEmpty()) {
+                      $projects = '';
+                    } else {
+                      $projects = $getproject[0]->bangla;
+                    }
+                  } else {
+                    $projects = $project->projectTitle;
+                  }
+                  ?>
+                  <span class="menu-text">{{$projects}}</span>
                 </a>
               </li>
               @endforeach

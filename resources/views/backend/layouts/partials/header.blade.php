@@ -16,8 +16,22 @@ if (Session::has('user_pin')) {
 		<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
 
 			@if(session('project'))
+
+			<?php
+			if (session('locale') == 'bn') {
+				$getproject = DB::table('dcs.projects')->where('projectTitle', session('project'))->get();
+				if ($getproject->isEmpty()) {
+					$projects = '';
+				} else {
+					$projects = $getproject[0]->bangla;
+				}
+			} else {
+				$projects = session('project');
+			}
+
+			?>
 			<div class="project_value">
-				<h4>@lang('dashboard.project'): {{session('project')}}</h4>
+				<h4>@lang('dashboard.project'): {{$projects }}</h4>
 			</div>
 			@endif
 		</div>
@@ -406,7 +420,7 @@ if (Session::has('user_pin')) {
 						@if(session('locale'))
 						{{session('locale')}}
 						@else
-						English
+						en
 						@endif
 					</div>
 				</div>
@@ -417,7 +431,7 @@ if (Session::has('user_pin')) {
 					<ul class="navi navi-hover py-4">
 						<!--begin::Item-->
 						<li class="navi-item ">
-							<a href="/dcs/lang/English" class="navi-link">
+							<a href="/dcs/lang/en" class="navi-link">
 								{{-- <span class="symbol symbol-20 mr-3">
 								<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/flags/226-united-states.svg" alt="" />
 							</span> --}}
@@ -427,7 +441,7 @@ if (Session::has('user_pin')) {
 						<!--end::Item-->
 						<!--begin::Item-->
 						<li class="navi-item">
-							<a href="/dcs/lang/Bangla" class="navi-link">
+							<a href="/dcs/lang/bn" class="navi-link">
 								{{-- <span class="symbol symbol-20 mr-3">
 								<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/flags/128-spain.svg" alt="" />
 							</span> --}}
