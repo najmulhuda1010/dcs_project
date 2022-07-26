@@ -1,6 +1,6 @@
 <?php
 return [
-    'header' => 'Admission',
+    'header' => 'Report',
     'division' => 'Division',
     'region' => 'Region',
     'report_type' => 'Report Type',

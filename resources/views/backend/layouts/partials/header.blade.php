@@ -16,7 +16,6 @@ if (Session::has('user_pin')) {
 		<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
 
 			@if(session('project'))
-
 			<?php
 			if (session('locale') == 'bn') {
 				$getproject = DB::table('dcs.projects')->where('projectTitle', session('project'))->get();
@@ -472,7 +471,7 @@ if (Session::has('user_pin')) {
 					<ul class="navi navi-hover py-4">
 						<!--begin::Item-->
 						<li class="navi-item">
-							<a href="Logout" class="navi-link btn">Sign out</a>
+							<a href="https://trendxstage.brac.net/home" class="navi-link btn">Sign out</a>
 						</li>
 					</ul>
 					<!--end::Nav-->
