@@ -632,9 +632,17 @@
                                         <tr>
                                             <td>@lang('loanApproval.label30')</td>
                                             <td>
+
                                                 @if($rca->instal_proposloan!=null and $rca->monthly_cash!=null)
                                                 @php
+                                                if($rca->monthly_cash !=0 and $rca->instal_proposloan !=0)
+                                                {
                                                 $tolerance = number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $tolerance=0;
+                                                }
+
                                                 @endphp
                                                 {{ $tolerance }}
                                                 @endif
@@ -642,24 +650,46 @@
                                             <td>
                                                 @if($rca->bm_instal_proposloan!=null and $rca->bm_monthly_cash!=null)
                                                 @php
+                                                if($rca->bm_monthly_cash !=0 and $rca->bm_instal_proposloan !=0)
+                                                {
                                                 $bmTolerance = number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                }
+                                                else
+                                                {
+                                                $bmTolerance=0;
+                                                }
+
                                                 @endphp
                                                 {{ $bmTolerance }}
                                                 @endif
                                             </td>
+                                            @php
+                                            $amTolerance=0;
+                                            @endphp
                                             @if($rca->am_instal_proposloan!=null and $rca->am_monthly_cash!=null)
                                             @php
+                                            if($rca->am_instal_proposloan !=0 and $rca->am_monthly_cash !=0)
+                                            {
                                             $amTolerance = number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                            }
                                             @endphp
                                             <td>{{ $amTolerance }}</td>
                                             @elseif($rca->am_instal_proposloan=null and $rca->am_monthly_cash!=null)
                                             @php
+                                            if($rca->bm_instal_proposloan !=0 and $rca->am_monthly_cash !=0)
+                                            {
                                             $amTolerance = number_format(($rca->bm_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                            }
+
                                             @endphp
                                             <td>{{ $amTolerance }}</td>
                                             @elseif($rca->am_instal_proposloan!=null and $rca->am_monthly_cash=null)
                                             @php
+                                            if($rca->am_instal_proposloan !=0 and $rca->bm_monthly_cash !=0)
+                                            {
                                             $amTolerance = number_format(($rca->am_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                            }
+
                                             @endphp
                                             <td>{{ $amTolerance }}</td>
                                             @else
