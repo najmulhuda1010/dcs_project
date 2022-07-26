@@ -1,0 +1,30 @@
+<?php
+return[
+    'header'=>'ঋণ',
+    'division'=>'বিভাগ',
+    'region'=>'অঞ্চল',
+    'area'=>'এলাকা',
+    'branch'=>'শাখা',
+    'po'=>'পিও',
+    'branchSearch'=>'শাখা ভিত্তিক অনুসন্ধান',
+    'dateRange'=>'তারিখের পরিসীমা',
+    'status'=>'অবস্থা',
+    'table_header1'=>'শাখা',
+    'table_header2'=>'তারিখ',
+    'table_header3'=>'সদস্য',
+    'table_header4'=>'পিও',
+    'table_header5'=>'গ্রাহকের নাম',
+    'table_header6'=>'পরিমাণ',
+    'table_header7'=>'অবস্থা',
+    'table_header8'=>'কর্ম',
+    'approval_header'=>'ঋণ অনুমোদন',
+    'approval_tab1'=> 'ঋণ বিস্তারিত',
+    'approval_tab2'=> 'আরসিএ',
+    'approval_tab3'=> 'সুপারিশকারী এবং গ্যারান্টার',
+    'approval_tab4'=> 'সিএসআই তথ্য',
+    'approval_tab5'=> 'বাসস্থান তথ্য',
+    'approval_tab6'=> 'ক্লায়েন্ট তথ্য',
+    'approval_tab7'=> 'অধিক তথ্য',
+    'approval_tab8'=> 'সামাজিক গ্রহণযোগ্যতা'
+]
+?>

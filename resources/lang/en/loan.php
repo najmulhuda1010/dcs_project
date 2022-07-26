@@ -1,0 +1,30 @@
+<?php
+return[
+    'header'=>'Loan',
+    'division'=>'Division',
+    'region'=>'Region',
+    'area'=>'Area',
+    'branch'=>'Branch',
+    'po'=>'PO',
+    'branchSearch'=>'Branch Wise Search',
+    'dateRange'=>'Date Range',
+    'status'=>'Status',
+    'table_header1'=>'Branch',
+    'table_header2'=>'Date',
+    'table_header3'=>'Member',
+    'table_header4'=>'PO',
+    'table_header5'=>'Client Name',
+    'table_header6'=>'Amount',
+    'table_header7'=>'Status',
+    'table_header8'=>'Action',
+    'approval_header'=>'Loan Approval',
+    'approval_tab1'=> 'Loan Details',
+    'approval_tab2'=> 'RCA',
+    'approval_tab3'=> 'Recommender Info',
+    'approval_tab4'=> 'CSI Information',
+    'approval_tab5'=> 'Residence Information',
+    'approval_tab6'=> 'Client Information',
+    'approval_tab7'=> 'More Information',
+    'approval_tab8'=> 'Checklist'
+]
+?>
