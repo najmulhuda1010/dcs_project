@@ -175,7 +175,21 @@
                     @endphp
                     <div>
                         <div class="title text_align">
-                            <h3>@lang('loanApproval.header17')-Dabi</h3>
+                        @if(session('project'))
+                            <?php
+                            if (session('locale') == 'bn') {
+                                $getproject = DB::table('dcs.projects')->where('projectTitle', session('project'))->get();
+                                if ($getproject->isEmpty()) {
+                                    $projectsName = '';
+                                } else {                                  
+                                    $projectsName = $getproject[0]->bangla;                                    
+                                }
+                            } else {
+                                $projectsName = session('project');
+                            }
+                            ?>
+                            @endif
+                            <h3>@lang('loanApproval.header17')-{{$projectsName}}</h3>
                             <h6>@lang('loanApproval.header18')</h6>
                         </div>
 
@@ -2069,23 +2083,23 @@
             <span class="close">&times;</span>
         </div>
         <div>
-            <h4 class="mb-4">Last Close Loan</h4>
+            <h4 class="mb-4">@lang('loanApproval.header16')</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <p>Loan No: <span id="loanNo"></span></p>
-                    <p>Installment Amount: <span id="installmentAmount"></span></p>
+                    <p>@lang('loanApproval.closeLoan1'): <span id="loanNo"></span></p>
+                    <p>@lang('loanApproval.closeLoan2'): <span id="installmentAmount"></span></p>
                 </div>
                 <div class="col-md-6">
-                    <p>Disburse Date: <span id="disburseDate"></span></p>
-                    <p>Disbursed Amount: <span id="disbursedAmount"></span></p>
+                    <p>@lang('loanApproval.closeLoan3'): <span id="disburseDate"></span></p>
+                    <p>@lang('loanApproval.closeLoan4'): <span id="disbursedAmount"></span></p>
                 </div>
             </div>
             <table style="text-align: center;" class="table table-bordered">
                 <thead>
                     <tr class="brac-color">
-                        <th>Collection Amount</th>
-                        <th>Collection Date</th>
-                        <th>Collection Method</th>
+                        <th>@lang('loanApproval.closeLoan5')</th>
+                        <th>@lang('loanApproval.closeLoan6')</th>
+                        <th>@lang('loanApproval.closeLoan7')</th>
                     </tr>
                 </thead>
                 <tbody id="closeLoanTable">

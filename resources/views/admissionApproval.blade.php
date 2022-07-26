@@ -166,7 +166,21 @@
 
                     <div class="member_info">
                         <div class="title text_align">
-                            <h3>@lang('loanApproval.header17')-Dabi</h3>
+                            @if(session('project'))
+                            <?php
+                            if (session('locale') == 'bn') {
+                                $getproject = DB::table('dcs.projects')->where('projectTitle', session('project'))->get();
+                                if ($getproject->isEmpty()) {
+                                    $projectsName = '';
+                                } else {                                  
+                                    $projectsName = $getproject[0]->bangla;                                    
+                                }
+                            } else {
+                                $projectsName = session('project');
+                            }
+                            ?>
+                            @endif
+                            <h3>@lang('loanApproval.header17')-{{$projectsName}}</h3>
                             <h6>@lang('admissionApproval.header8')</h6>
                         </div>
 

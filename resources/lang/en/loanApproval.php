@@ -100,4 +100,12 @@ return [
     'header17' =>    'Microfinance',
     'header18' =>    'Loan Analysis and Evaluation From',
 
+    'closeLoan1' => 'Loan No',
+    'closeLoan2' => 'Installment Amount',
+    'closeLoan3' => 'Disburse Date',
+    'closeLoan4' => 'Disbursed Amount',
+    'closeLoan5' => 'Collection Amount',
+    'closeLoan6' => 'Collection Date',
+    'closeLoan7' => 'Collection Method',
+
 ];

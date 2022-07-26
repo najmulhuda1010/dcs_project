@@ -1,6 +1,6 @@
 <?php
 return [
-    'header' => 'ভর্তি',
+    'header' => 'রিপোর্ট',
     'division' => 'বিভাগ',
     'region' => 'অঞ্চল',
     'report_type' => 'প্রতিবেদনের ধরন',
