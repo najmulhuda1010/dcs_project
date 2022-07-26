@@ -3,7 +3,7 @@
 @section('title','Action')
 @section('style')
 <style>
- 
+
 
 </style>
 @endsection
@@ -16,7 +16,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Create Sub-Process something new</h5>
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Create Sub-Process</h5>
             </div>
             <!--end::Info-->
         </div>
@@ -58,7 +58,7 @@
                             sureyou want to submit?');" name="registration"> --}}
                             <form action="{{route('action-list')}}" method="post">
                                 @csrf
-                                    <div class="box-body">
+                                <div class="box-body">
                                     <div class="form-group">
                                         <label for="projectcode">Project Code</label>
                                         <select id="projectcode" name="projectcode" class="form-control">
@@ -78,12 +78,12 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label for="actionname">Action Name</label>
                                         <input type="text" class="form-control" id="actionname" name="actionname">
-                                    </div>                                    
-                                   
+                                    </div>
+
 
                                 </div><!-- /.box-body -->
                                 <br>
@@ -113,7 +113,7 @@
 
 @section('script')
 <script>
-    
+
 
 </script>
 
