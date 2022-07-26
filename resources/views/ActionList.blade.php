@@ -16,7 +16,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Create Sub-Process</h5>
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Create Sub-Process something new</h5>
             </div>
             <!--end::Info-->
         </div>
