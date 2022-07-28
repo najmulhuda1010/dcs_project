@@ -739,7 +739,7 @@
                                             <td>@lang('loanApproval.label13')</td>
                                             <td>@lang('loanApproval.label14')</td>
                                             <td>@lang('loanApproval.label15')</td>
-                                            <td>RM Assessment</td>
+                                            <td>@lang('loanApproval.label72')</td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label16')</td>
@@ -784,7 +784,7 @@
                                             <td>@lang('loanApproval.label13')</td>
                                             <td>@lang('loanApproval.label14')</td>
                                             <td>@lang('loanApproval.label15')</td>
-                                            <td>RM Assessment</td>
+                                            <td>@lang('loanApproval.label72')</td>
                                             <td rowspan="6"></td>
                                         </tr>
                                         <tr>
@@ -885,7 +885,7 @@
                                             <td>@lang('loanApproval.label13')</td>
                                             <td>@lang('loanApproval.label14')</td>
                                             <td>@lang('loanApproval.label15')</td>
-                                            <td>RM Assessment</td>
+                                            <td>@lang('loanApproval.label72')</td>
                                             <td rowspan="5"></td>
                                         </tr>
                                         <tr>
@@ -998,7 +998,7 @@
                                             <td>@lang('loanApproval.label13')</td>
                                             <td>@lang('loanApproval.label14')</td>
                                             <td>@lang('loanApproval.label15')</td>
-                                            <td>RM Assessment</td>
+                                            <td>@lang('loanApproval.label72')</td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label16')</td>
@@ -1031,7 +1031,7 @@
                                             <td>@lang('loanApproval.label13')</td>
                                             <td>@lang('loanApproval.label14')</td>
                                             <td>@lang('loanApproval.label15')</td>
-                                            <td>RM Assessment</td>
+                                            <td>@lang('loanApproval.label72')</td>
                                             <td rowspan="6"></td>
                                         </tr>
                                         <tr>
@@ -1100,7 +1100,7 @@
                                             <td>@lang('loanApproval.label13')</td>
                                             <td>@lang('loanApproval.label14')</td>
                                             <td>@lang('loanApproval.label15')</td>
-                                            <td>RM Assessment</td>
+                                            <td>@lang('loanApproval.label72')</td>
                                             <td rowspan="5"></td>
                                         </tr>
                                         <tr>

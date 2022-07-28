@@ -80,6 +80,7 @@ return [
     'label69' => 'Remarks?',
     'label70' => 'Picture of client House',
     'label71' => 'Loan Duration (Months)',
+    'label72' => 'RM Assessment',
 
     'header1' =>    'Applicant`s Picture',
     'header2' =>    'Applicant`s Name',

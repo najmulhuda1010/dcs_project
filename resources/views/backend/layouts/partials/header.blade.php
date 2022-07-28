@@ -430,7 +430,7 @@ if (Session::has('user_pin')) {
 					<ul class="navi navi-hover py-4">
 						<!--begin::Item-->
 						<li class="navi-item ">
-							<a href="/dcs/lang/en" class="navi-link">
+							<a href="/lang/en" class="navi-link">
 								{{-- <span class="symbol symbol-20 mr-3">
 								<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/flags/226-united-states.svg" alt="" />
 							</span> --}}
@@ -440,7 +440,7 @@ if (Session::has('user_pin')) {
 						<!--end::Item-->
 						<!--begin::Item-->
 						<li class="navi-item">
-							<a href="/dcs/lang/bn" class="navi-link">
+							<a href="/lang/bn" class="navi-link">
 								{{-- <span class="symbol symbol-20 mr-3">
 								<img src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/flags/128-spain.svg" alt="" />
 							</span> --}}
