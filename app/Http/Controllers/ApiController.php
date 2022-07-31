@@ -29,7 +29,7 @@ class ApiController extends Controller
 	private $dberp = 'erptestingserver'; //erp test db
 	private $db = 'dcs';				//dcs db name
 
-	public function PoSync(Request $req)
+	public function PoSync(Request $req) // PO Sync all from config.
 	{
 		//echo "Huda";
 		//dd("H");
@@ -107,7 +107,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function OperationsDataSync(Request $req)
+	public function OperationsDataSync(Request $req) // Tab to Server Store then return Tab 
 	{
 		$token = Request::input('token');
 		$branch_code = Request::input('branchcode');
@@ -116,8 +116,8 @@ class ApiController extends Controller
 		$project_code = Request::input('projectcode');
 		$projectcode = str_pad($project_code, 3, "0", STR_PAD_LEFT);
 
-		$this->GetErpPostedAdmissionData($branchcode); //erp dcs admission data sync 
-		$this->GetErpPostedLoanData($branchcode); //erp dcs Loan data sync
+		$this->GetErpPostedAdmissionData($branchcode); //erp dcs admission data sync (piloting or live e gele off kore dite hobe)
+		$this->GetErpPostedLoanData($branchcode); //erp dcs Loan data sync (piloting or  live gele off kore dite hobe)
 
 
 		if ($token == '7f30f4491cb4435984616d1913e88389') {
@@ -692,7 +692,7 @@ class ApiController extends Controller
 		echo "Delete Successfully";
 	}
 
-	public function erpVOList(Request $req)
+	public function erpVOList(Request $req) // get data form BITS Server
 	{
 		$dberp = $this->dberp;
 		$token = Request::input('token');
@@ -731,7 +731,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function LastOneCloseLoanBehavior()
+	public function LastOneCloseLoanBehavior() // get data form BITS Server
 	{
 		$dberp = $this->dberp;
 		$token = Request::input('token');
@@ -778,7 +778,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function erpMemberList(Request $req)
+	public function erpMemberList(Request $req) // get data form BITS Server
 	{
 		$dberp = $this->dberp;
 		$serverurl = DB::Table($dberp . '.server_url')->where('server_status', 3)->where('status', 1)->first();
@@ -820,7 +820,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function erpSavingsInfo(Request $req)
+	public function erpSavingsInfo(Request $req) // get data form BITS Server
 	{
 		$dberp = $this->dberp;
 		$db = $this->db;
@@ -895,7 +895,7 @@ class ApiController extends Controller
 	}
 
 	//admission member erp posting
-	public function dcsInstallmentCalculator()
+	public function dcsInstallmentCalculator() // get data form BITS Server
 	{
 		$json = json_encode(Request::all());
 		// dd($json);
@@ -938,7 +938,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function dcsInsurancePremiumCalculation()
+	public function dcsInsurancePremiumCalculation() // get data form BITS Server
 	{
 		$json = json_encode(Request::all());
 		// dd(Request::toJson());
@@ -981,7 +981,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function CelingConfig(Request $request)
+	public function CelingConfig(Request $request) //no need
 	{
 		//dd("H");
 		$db = $this->db;
@@ -1013,7 +1013,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function GetConfig(Request $request)
+	public function GetConfig(Request $request) //no need
 	{
 		$db = $this->db;
 		$projectCode = Request::input('projectcode');
@@ -1072,7 +1072,7 @@ class ApiController extends Controller
 			return json_encode($result);
 		}
 	}
-	public function Auth(Request $request)
+	public function Auth(Request $request) //Project authorization check 
 	{
 		$db = $this->db;
 		$projectCode = Request::input('projectcode');
@@ -1095,7 +1095,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function NIDVerification(Request $req)
+	public function NIDVerification(Request $req) //Nid Verification
 	{
 		$db = $this->db;
 		$appid = Request::input('appid');
@@ -1117,7 +1117,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function ImageUpload(Request $req)
+	public function ImageUpload(Request $req) // Image Upload
 	{
 		$db = $this->db;
 		$appid = Request::input('appid');
@@ -1137,7 +1137,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function SurveyStore(Request $request)
+	public function SurveyStore(Request $request) //Servey Data Store
 	{
 		$db = $this->db;
 		// $json = '{"token":"xxxxxxxxx","appid":"bmsm","data":[{"entollmentid":"12321","projectcode":"015","voCode":"123","branch_code":"321",
@@ -1195,7 +1195,7 @@ class ApiController extends Controller
 
 	}
 
-	public function AdmissionStore(Request $request)
+	public function AdmissionStore(Request $request) //Addmission Data Store
 	{
 		$db = $this->db;
 		$baseUrl = url('');
@@ -1359,7 +1359,7 @@ class ApiController extends Controller
 
 	}
 
-	public function BmAdmissionAssessment(Request $request)
+	public function BmAdmissionAssessment(Request $request) //BM Add New Fied store
 	{
 		$db = $this->db;
 		$json = Request::input('json');
@@ -1416,7 +1416,7 @@ class ApiController extends Controller
 
 	}
 
-	public function BmLoanAssessment(Request $request)
+	public function BmLoanAssessment(Request $request) //BM Add New Fied store
 	{
 		$db = $this->db;
 		// { "token": "xxxxxxxxx", "appid": "xxxxxxxxx", "loan_checklist": [{ "vo_code": "2050", "loan_id": "d920660e-f09e-4fc9-8f5c-34c9a43ebf4d", "erp_loan_id": null, "branch_code": "0607", "pin": "00196144", "project_code": "015", "mem_id": "886dc81c-528d-4b02-8031-c9513ebc8186", "erp_mem_id": null, "bm_repay_loan": 1, "bm_conduct_activity": 3, "bm_action_required": 1, "bm_rca_rating": 0 }], "rca": [{ "bm_monthlyincome_main": "2000", "bm_monthlyincome_spouse_child": "2000", "bm_monthlyincome_other": "555", "bm_house_rent": "40", "bm_food": "0", "bm_education": "0", "bm_medical": "0", "bm_festive": "0", "bm_utility": "0", "bm_saving": "0", "bm_other": "0", "bm_monthly_instal": "", "bm_debt": "855", "bm_monthly_cash": "2515", "bm_instal_proposloan": "466.67" }] }
@@ -1516,7 +1516,7 @@ class ApiController extends Controller
 
 	}
 
-	public function AllSurveyData(Request $request)
+	public function AllSurveyData(Request $request) //no need
 	{
 		$db = $this->db;
 		// $projectCode = Request::input('projectcode');
@@ -1540,7 +1540,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function AllAdmissionData(Request $request)
+	public function AllAdmissionData(Request $request) //no need
 	{
 		$db = $this->db;
 		// $projectCode = Request::input('projectcode');
@@ -1563,7 +1563,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function LoanRcaDataStore(Request $request)
+	public function LoanRcaDataStore(Request $request) //Loan RCA Data Store
 	{
 		$db = $this->db;
 		$baseUrl = url('');
@@ -1749,7 +1749,7 @@ class ApiController extends Controller
 
 	}
 
-	public function AllLoanRcaData(Request $request)
+	public function AllLoanRcaData(Request $request) //no need
 	{
 		$db = $this->db;
 		// $projectCode = Request::input('projectcode');
@@ -1779,7 +1779,7 @@ class ApiController extends Controller
 		echo json_encode($result);
 	}
 
-	public function AdmissionDataSync(Request $request)
+	public function AdmissionDataSync(Request $request) //when notification Change then admission data change
 	{
 		$db = $this->db;
 		$branchcode = Request::input('branchcode');
@@ -2339,7 +2339,7 @@ class ApiController extends Controller
 	}
 
 
-	public function BmDataModify(Request $request)
+	public function BmDataModify(Request $request) //BM Data Modified
 	{
 		$db = $this->db;
 		$json = Request::input('json');
@@ -2410,7 +2410,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function DocumentManager(Request $request)
+	public function DocumentManager(Request $request) //DCS Operation handel
 	{
 		$db = $this->db;
 		$baseUrl = url('');
@@ -3076,7 +3076,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function documentErpPosting($doc_id, $doc_type)
+	public function documentErpPosting($doc_id, $doc_type) //Server To Buffer
 	{
 		if ($doc_type == 'admission') {
 			$response = $this->admissionDataProccessForErp($doc_id);
@@ -3532,7 +3532,7 @@ class ApiController extends Controller
 	}
 
 	//erp get api admission data
-	public function GetErpPostedAdmissionData($branchcode)
+	public function GetErpPostedAdmissionData($branchcode) //after filed this route off
 	{
 		$access_token = $this->tokenVerify();
 		$clientid = 'Ieg1N5W2qh3hF0qS9Zh2wq6eex2DB935';
@@ -4178,7 +4178,7 @@ class ApiController extends Controller
 		}
 	}
 
-	public function DcsBufferStatusCheck()
+	public function DcsBufferStatusCheck() //Buffer check status pending or Post after 30 minute.
 	{
 		$db = $this->db;
 		$currentDatetime = date("Y-m-d h:i:s");
@@ -4702,7 +4702,7 @@ class ApiController extends Controller
 		return "Data sync successful";
 	}
 
-	public function DcsDataPulling()
+	public function DcsDataPulling() //data pulling weekly
 	{
 		$db = $this->db;
 		$currentDatetime = date("Y-m-d h:i:s");

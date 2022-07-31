@@ -28,11 +28,11 @@ Route::get('/lang/{locale}', function ($locale) {
 });
 
 //oauth 2 test route
-Route::get('/oauth', 'DashboardController@tokenVerify');
-Route::get('/getErpDcsAddmissionList', 'DashboardController@getErpDcsAddmissionList');
-Route::get('/insertPostedAddmissionList', 'DashboardController@insertPostedAddmissionList');
-Route::get('/testing/{id}', 'DashboardController@test');
-Route::get('/testing/loan/{id}', 'ApiController@loanDataProccessForErp');
+Route::get('/oauth', 'DashboardController@tokenVerify'); //test
+Route::get('/getErpDcsAddmissionList', 'DashboardController@getErpDcsAddmissionList'); //test
+Route::get('/insertPostedAddmissionList', 'DashboardController@insertPostedAddmissionList'); //test
+Route::get('/testing/{id}', 'DashboardController@test'); //test
+Route::get('/testing/loan/{id}', 'ApiController@loanDataProccessForErp'); //test
 
 //Login Routes
 Route::get('/weblogin', 'LoginController@weblogin');
@@ -40,7 +40,7 @@ Route::get('/Logout', 'LoginController@Logout');
 
 /***************************Start Api******************************************/
 Route::get('/DcsBufferStatusCheck', 'ApiController@DcsBufferStatusCheck');
-Route::get('/test', 'ApiController@Index');
+Route::get('/test', 'ApiController@Index'); //test
 Route::post('/PoSync', 'ApiController@PoSync');
 Route::get('/DcsDataPulling', 'ApiController@DcsDataPulling');
 Route::post('/ReportSync', 'ApiController@ReportSync');
