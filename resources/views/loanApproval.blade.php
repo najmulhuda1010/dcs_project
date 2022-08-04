@@ -120,6 +120,13 @@
     .hidden {
         display: none;
     }
+    .box-footer{
+        position:fixed;
+        /* top: 80px; */
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    }
 
 </style>
 @endsection
@@ -403,7 +410,15 @@
                                             <td colspan="2">
                                                 @if($data->loan_product!= null)
                                                 @php
-                                                $loan_product=DB::table($db.'.product_details')->select('productname')->where('id',$data->loan_product)->first();
+                                                if(session('projectcode') == '015')
+                                                {
+                                                    $projectcode = "15";
+                                                }
+                                                elseif(session('projectcode') == '015')
+                                                {
+                                                    $projectcode = "60";
+                                                }
+                                                $loan_product=DB::table($db.'.product_project_member_category')->select('productname')->where('productid',$data->loan_product)->where('projectcode',$projectcode)->first();
                                                 @endphp
                                                 {{$loan_product->productname}}
                                                 @endif
