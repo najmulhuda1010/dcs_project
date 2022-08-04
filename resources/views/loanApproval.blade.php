@@ -1372,19 +1372,25 @@
                                         <tr>
                                             <td>@lang('loanApproval.label39')</td>
                                             <td colspan="2">
+                                                @if($data->grantor_nidfront_photo)
                                                 <img class="nid_img" src="{{$data->grantor_nidfront_photo}}" alt="">
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label40')</td>
                                             <td colspan="2">
+                                                @if($data->grantor_nidback_photo)
                                                 <img class="nid_img" src="{{$data->grantor_nidback_photo}}" alt="">
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label41')</td>
                                             <td colspan="2">
+                                                @if($data->grantor_photo)
                                                 <img class="guarantor_img" src="{{$data->grantor_photo}}" alt="">
+                                                @endif
                                             </td>
                                         </tr>
                                     </table>
@@ -1762,23 +1768,29 @@
                                         <tr>
                                             <td>@lang('admissionApproval.label22')</td>
                                             <td colspan="2">
+                                                @if($admissionData->ReffererIdImg)
                                                 <img class="guarantor_img " src="{{$admissionData->ReffererIdImg}}"
                                                     alt="Refferer Picture">
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label23')</td>
                                             <td colspan="2">
+                                                @if($admissionData->ApplicantCpmbinedImg)
                                                 <img class="guarantor_img "
                                                     src="{{$admissionData->ApplicantCpmbinedImg}}"
                                                     alt="Combine Picture">
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label24')</td>
                                             <td colspan="2">
+                                                @if($admissionData->NomineeIdImg)
                                                 <img class="guarantor_img " src="{{$admissionData->NomineeIdImg}}"
                                                     alt="Nominee's Images">
+                                                @endif
                                             </td>
                                         </tr>
                                     </table>
@@ -2152,7 +2164,9 @@
                                         <tr>
                                             <td>@lang('loanApproval.label70')</td>
                                             <td colspan="2">
-                                                <!-- <img src="{{$data->bm_earningMember}}" alt=""> -->
+                                                @if($data->bm_clienthouse)
+                                                <img src="{{$data->bm_clienthouse}}" alt="house">
+                                                @endif
                                             </td>
                                         </tr>
                                     </table>
