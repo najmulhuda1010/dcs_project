@@ -410,7 +410,6 @@
                                             <td colspan="2">
                                                 @if($data->loan_product!= null)
                                                 @php
-<<<<<<< HEAD
                                                 if(session('projectcode') == '015')
                                                 {
                                                     $projectcode = "15";
@@ -420,10 +419,8 @@
                                                     $projectcode = "60";
                                                 }
                                                 $loan_product=DB::table($db.'.product_project_member_category')->select('productname')->where('productid',$data->loan_product)->where('projectcode',$projectcode)->first();
-=======
                                                 //dd($data->loan_product);
                                                 $loan_product=DB::table($db.'.product_details')->select('productname')->where('id',$data->loan_product)->first();
->>>>>>> a0aa4a77c9c02d45ebb42ec18c3add1b109b3bfd
                                                 @endphp
                                                 {{$loan_product->productname}}
                                                 @endif
