@@ -419,8 +419,7 @@
                                                     $projectcode = "60";
                                                 }
                                                 $loan_product=DB::table($db.'.product_project_member_category')->select('productname')->where('productid',$data->loan_product)->where('projectcode',$projectcode)->first();
-                                                //dd($data->loan_product);
-                                                $loan_product=DB::table($db.'.product_details')->select('productname')->where('id',$data->loan_product)->first();
+                                                
                                                 @endphp
                                                 {{$loan_product->productname}}
                                                 @endif
