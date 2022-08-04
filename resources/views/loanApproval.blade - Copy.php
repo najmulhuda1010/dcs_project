@@ -120,14 +120,6 @@
     .hidden {
         display: none;
     }
-    .box-footer{
-        position:fixed;
-        /* top: 80px; */
-    bottom: 80px;
-    left: 0;
-    right: 0;
-    }
-
 </style>
 @endsection
 
@@ -210,60 +202,48 @@
                                                 <p>@lang('loanApproval.header1') :</p>
                                                 @if(!empty($admissionData))
                                                 @if($admissionData->ApplicantCpmbinedImg==null)
-                                                <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle"
-                                                    alt="Applicant image">
+                                                <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle" alt="Applicant image">
                                                 @else
-                                                <img src="{{ $admissionData->ApplicantCpmbinedImg }}" class="img-circle"
-                                                    alt="Applicant image">
+                                                <img src="{{ $admissionData->ApplicantCpmbinedImg }}" class="img-circle" alt="Applicant image">
                                                 @endif
                                                 @else
                                                 @if($admissionApi->MemberImageUrl==null)
-                                                <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle"
-                                                    alt="Applicant image">
+                                                <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle" alt="Applicant image">
                                                 @else
-                                                <img src="{{ $admissionApi->MemberImageUrl }}" class="img-circle"
-                                                    alt="Applicant image">
+                                                <img src="{{ $admissionApi->MemberImageUrl }}" class="img-circle" alt="Applicant image">
                                                 @endif
                                                 @endif
 
                                             </div>
                                             <div class="col-md-8">
                                                 @if(!empty($admissionData))
-                                                <p>@lang('loanApproval.header2') : {{ $admissionData->ApplicantsName }}
-                                                </p>
-                                                <p>@lang('loanApproval.header3') : {{ $admissionData->PresentAddress }}
-                                                </p>
+                                                <p>@lang('loanApproval.header2') : {{ $admissionData->ApplicantsName }}</p>
+                                                <p>@lang('loanApproval.header3') : {{ $admissionData->PresentAddress }}</p>
                                                 <p>@lang('loanApproval.header4') : {{ $admissionData->Phone }}</p>
                                                 <p>@lang('loanApproval.header5') : {{ $admissionData->MotherName }}</p>
                                                 <p>@lang('loanApproval.header6') : {{ $admissionData->FatherName }}</p>
                                                 <p>@lang('loanApproval.header7') : {{ $admissionData->SpouseName }}</p>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header8') : <a
-                                                                href="{{ $admissionData->FrontSideOfIdImg }}">image</a>
+                                                        <p>@lang('loanApproval.header8') : <a href="{{ $admissionData->FrontSideOfIdImg }}">image</a>
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header9') : <a
-                                                                href="{{ $admissionData->SpouseNidFront }}">image</a>
-                                                        </p>
+                                                        <p>@lang('loanApproval.header9') : <a href="{{ $admissionData->SpouseNidFront }}">image</a></p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header10') : <a
-                                                                href="{{ $admissionData->BackSideOfIdimg }}">image</a>
+                                                        <p>@lang('loanApproval.header10') : <a href="{{ $admissionData->BackSideOfIdimg }}">image</a>
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header11') : <a
-                                                                href="{{ $admissionData->SpouseNidBack }}">image</a></p>
+                                                        <p>@lang('loanApproval.header11') : <a href="{{ $admissionData->SpouseNidBack }}">image</a></p>
                                                     </div>
                                                 </div>
                                                 @else
                                                 <p>@lang('loanApproval.header2') : {{ $admissionApi->MemberName }}</p>
-                                                <p>@lang('loanApproval.header3') : {{ $admissionApi->PresentAddress }}
-                                                </p>
+                                                <p>@lang('loanApproval.header3') : {{ $admissionApi->PresentAddress }}</p>
                                                 <p>@lang('loanApproval.header4') : {{ $admissionApi->ContactNo }}</p>
                                                 <p>@lang('loanApproval.header5') : {{ $admissionApi->MotherName }}</p>
                                                 <p>@lang('loanApproval.header6') : {{ $admissionApi->FatherName }}</p>
@@ -319,38 +299,30 @@
                             <div class="nav_bar hidden">
                                 <ul class="nav  nav-pills nav-fill">
                                     <li class="nav-item active">
-                                        <a class="nav-link active" id="details1" data-toggle="tab"
-                                            href="#loanDetails">@lang('loan.approval_tab1')</a>
+                                        <a class="nav-link active" id="details1" data-toggle="tab" href="#loanDetails">@lang('loan.approval_tab1')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="rca1" data-toggle="tab"
-                                            href="#rca">@lang('loan.approval_tab2')</a>
+                                        <a class="nav-link" id="rca1" data-toggle="tab" href="#rca">@lang('loan.approval_tab2')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab"
-                                            href="#recommender">@lang('loan.approval_tab3')</a>
+                                        <a class="nav-link" data-toggle="tab" href="#recommender">@lang('loan.approval_tab3')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="csi1" data-toggle="tab"
-                                            href="#csi">@lang('loan.approval_tab4')</a>
+                                        <a class="nav-link" id="csi1" data-toggle="tab" href="#csi">@lang('loan.approval_tab4')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="residence1" data-toggle="tab"
-                                            href="#residence">@lang('loan.approval_tab5')</a>
+                                        <a class="nav-link" id="residence1" data-toggle="tab" href="#residence">@lang('loan.approval_tab5')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="client1" data-toggle="tab"
-                                            href="#clientInfo">@lang('loan.approval_tab6')</a>
+                                        <a class="nav-link" id="client1" data-toggle="tab" href="#clientInfo">@lang('loan.approval_tab6')</a>
                                     </li>
                                     @if($data2!=null)
                                     <li class="nav-item">
-                                        <a class="nav-link" id="more1" data-toggle="tab"
-                                            href="#moreInfo">@lang('loan.approval_tab7')</a>
+                                        <a class="nav-link" id="more1" data-toggle="tab" href="#moreInfo">@lang('loan.approval_tab7')</a>
                                     </li>
                                     @endif
                                     <li class="nav-item">
-                                        <a class="nav-link" id="social1" data-toggle="tab"
-                                            href="#acceptiblity">@lang('loan.approval_tab8')</a>
+                                        <a class="nav-link" id="social1" data-toggle="tab" href="#acceptiblity">@lang('loan.approval_tab8')</a>
                                     </li>
                                 </ul>
                             </div>
@@ -358,38 +330,30 @@
                             <div class="nav_bar ">
                                 <ul class="nav  nav-pills nav-fill click">
                                     <li class="nav-item active">
-                                        <a class="nav-link active" id="details1" data-toggle="tab"
-                                            href="#loanDetails">@lang('loan.approval_tab1')</a>
+                                        <a class="nav-link active" id="details1" data-toggle="tab" href="#loanDetails">@lang('loan.approval_tab1')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="rca1" data-toggle="tab"
-                                            href="#rca">@lang('loan.approval_tab2')</a>
+                                        <a class="nav-link" id="rca1" data-toggle="tab" href="#rca">@lang('loan.approval_tab2')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab"
-                                            href="#recommender">@lang('loan.approval_tab3')</a>
+                                        <a class="nav-link" data-toggle="tab" href="#recommender">@lang('loan.approval_tab3')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="csi1" data-toggle="tab"
-                                            href="#csi">@lang('loan.approval_tab4')</a>
+                                        <a class="nav-link" id="csi1" data-toggle="tab" href="#csi">@lang('loan.approval_tab4')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="residence1" data-toggle="tab"
-                                            href="#residence">@lang('loan.approval_tab5')</a>
+                                        <a class="nav-link" id="residence1" data-toggle="tab" href="#residence">@lang('loan.approval_tab5')</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="client1" data-toggle="tab"
-                                            href="#clientInfo">@lang('loan.approval_tab6')</a>
+                                        <a class="nav-link" id="client1" data-toggle="tab" href="#clientInfo">@lang('loan.approval_tab6')</a>
                                     </li>
                                     @if($data2!=null)
                                     <li class="nav-item">
-                                        <a class="nav-link" id="more1" data-toggle="tab"
-                                            href="#moreInfo">@lang('loan.approval_tab7')</a>
+                                        <a class="nav-link" id="more1" data-toggle="tab" href="#moreInfo">@lang('loan.approval_tab7')</a>
                                     </li>
                                     @endif
                                     <li class="nav-item">
-                                        <a class="nav-link" id="social1" data-toggle="tab"
-                                            href="#acceptiblity">@lang('loan.approval_tab8')</a>
+                                        <a class="nav-link" id="social1" data-toggle="tab" href="#acceptiblity">@lang('loan.approval_tab8')</a>
                                     </li>
                                 </ul>
                             </div>
@@ -410,20 +374,8 @@
                                             <td colspan="2">
                                                 @if($data->loan_product!= null)
                                                 @php
-<<<<<<< HEAD
-                                                if(session('projectcode') == '015')
-                                                {
-                                                    $projectcode = "15";
-                                                }
-                                                elseif(session('projectcode') == '015')
-                                                {
-                                                    $projectcode = "60";
-                                                }
-                                                $loan_product=DB::table($db.'.product_project_member_category')->select('productname')->where('productid',$data->loan_product)->where('projectcode',$projectcode)->first();
-=======
                                                 //dd($data->loan_product);
                                                 $loan_product=DB::table($db.'.product_details')->select('productname')->where('id',$data->loan_product)->first();
->>>>>>> a0aa4a77c9c02d45ebb42ec18c3add1b109b3bfd
                                                 @endphp
                                                 {{$loan_product->productname}}
                                                 @endif
@@ -448,9 +400,7 @@
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label3')</td>
-                                            <td colspan="2">
-                                                {{$data->scheme}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label4')</td>
@@ -458,33 +408,23 @@
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label5')</td>
-                                            <td colspan="2">
-                                                {{$data->amount_inword}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label6')</td>
-                                            <td colspan="2">
-                                                {{$data->loan_purpose}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label7')</td>
-                                            <td colspan="2">
-                                                {{$data->loan_user}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label8')</td>
-                                            <td colspan="2">
-                                                {{$data->loan_type}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label9')</td>
-                                            <td colspan="2">
-                                                {{$data->brac_loancount}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label10')</td>
@@ -539,13 +479,9 @@
                                             <td>{{$rca->monthlyincome_main}}</td>
                                             <td>{{$rca->bm_monthlyincome_main}}</td>
                                             @if($rca->am_monthlyincome_main!=null)
-                                            <td><input class="form-control" type="text" id="all_monthlyincome_main"
-                                                    name="am_monthlyincome_main"
-                                                    value="{{$rca->am_monthlyincome_main}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_main" name="am_monthlyincome_main" value="{{$rca->am_monthlyincome_main}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_monthlyincome_main"
-                                                    name="am_monthlyincome_main"
-                                                    value="{{$rca->bm_monthlyincome_main}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_main" name="am_monthlyincome_main" value="{{$rca->bm_monthlyincome_main}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -553,15 +489,9 @@
                                             <td>{{$rca->monthlyincome_spouse_child}}</td>
                                             <td>{{$rca->bm_monthlyincome_spouse_child}}</td>
                                             @if($rca->am_monthlyincome_spouse_child!=null)
-                                            <td><input class="form-control" type="text"
-                                                    id="all_monthlyincome_spouse_child"
-                                                    name="am_monthlyincome_spouse_child"
-                                                    value="{{$rca->am_monthlyincome_spouse_child}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_spouse_child" name="am_monthlyincome_spouse_child" value="{{$rca->am_monthlyincome_spouse_child}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text"
-                                                    id="all_monthlyincome_spouse_child"
-                                                    name="am_monthlyincome_spouse_child"
-                                                    value="{{$rca->bm_monthlyincome_spouse_child}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_spouse_child" name="am_monthlyincome_spouse_child" value="{{$rca->bm_monthlyincome_spouse_child}}"></td>
                                             @endif
 
                                         </tr>
@@ -570,13 +500,9 @@
                                             <td>{{$rca->monthlyincome_other}}</td>
                                         <td>{{$rca->bm_monthlyincome_other}}</td>
                                         @if($rca->am_monthlyincome_other!=null)
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other"
-                                                name="am_monthlyincome_other" value="{{$rca->am_monthlyincome_other}}">
-                                        </td>
+                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="am_monthlyincome_other" value="{{$rca->am_monthlyincome_other}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other"
-                                                name="am_monthlyincome_other" value="{{$rca->bm_monthlyincome_other}}">
-                                        </td>
+                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="am_monthlyincome_other" value="{{$rca->bm_monthlyincome_other}}"></td>
                                         @endif
 
                                         </tr> --}}
@@ -597,11 +523,9 @@
                                             <td>{{$rca->house_rent}}</td>
                                             <td>{{$rca->bm_house_rent}}</td>
                                             @if($rca->am_house_rent!=null)
-                                            <td><input class="form-control" type="text" id="all_house_rent"
-                                                    name="am_house_rent" value="{{$rca->am_house_rent}}"></td>
+                                            <td><input class="form-control" type="text" id="all_house_rent" name="am_house_rent" value="{{$rca->am_house_rent}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_house_rent"
-                                                    name="am_house_rent" value="{{$rca->bm_house_rent}}"></td>
+                                            <td><input class="form-control" type="text" id="all_house_rent" name="am_house_rent" value="{{$rca->bm_house_rent}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -609,11 +533,9 @@
                                             <td>{{$rca->food}}</td>
                                             <td>{{$rca->bm_food}}</td>
                                             @if($rca->am_food!=null)
-                                            <td><input class="form-control" type="text" id="all_food" name="am_food"
-                                                    value="{{$rca->am_food}}"></td>
+                                            <td><input class="form-control" type="text" id="all_food" name="am_food" value="{{$rca->am_food}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_food" name="am_food"
-                                                    value="{{$rca->bm_food}}"></td>
+                                            <td><input class="form-control" type="text" id="all_food" name="am_food" value="{{$rca->bm_food}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -621,11 +543,9 @@
                                             <td>{{$rca->education}}</td>
                                             <td>{{$rca->bm_education}}</td>
                                             @if($rca->am_education!=null)
-                                            <td><input class="form-control" type="text" id="all_education"
-                                                    name="am_education" value="{{$rca->am_education}}"></td>
+                                            <td><input class="form-control" type="text" id="all_education" name="am_education" value="{{$rca->am_education}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_education"
-                                                    name="am_education" value="{{$rca->bm_education}}"></td>
+                                            <td><input class="form-control" type="text" id="all_education" name="am_education" value="{{$rca->bm_education}}"></td>
                                             @endif
 
                                         </tr>
@@ -634,11 +554,9 @@
                                             <td>{{$rca->medical}}</td>
                                             <td>{{$rca->bm_medical}}</td>
                                             @if($rca->am_medical!=null)
-                                            <td><input class="form-control" type="text" id="all_medical"
-                                                    name="am_medical" value="{{$rca->am_medical}}"></td>
+                                            <td><input class="form-control" type="text" id="all_medical" name="am_medical" value="{{$rca->am_medical}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_medical"
-                                                    name="am_medical" value="{{$rca->bm_medical}}"></td>
+                                            <td><input class="form-control" type="text" id="all_medical" name="am_medical" value="{{$rca->bm_medical}}"></td>
                                             @endif
 
                                         </tr>
@@ -647,11 +565,9 @@
                                             <td>{{$rca->festive}}</td>
                                         <td>{{$rca->bm_festive}}</td>
                                         @if($rca->am_festive!=null)
-                                        <td><input class="form-control" type="text" id="all_festive" name="am_festive"
-                                                value="{{$rca->am_festive}}"></td>
+                                        <td><input class="form-control" type="text" id="all_festive" name="am_festive" value="{{$rca->am_festive}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_festive" name="am_festive"
-                                                value="{{$rca->bm_festive}}"></td>
+                                        <td><input class="form-control" type="text" id="all_festive" name="am_festive" value="{{$rca->bm_festive}}"></td>
                                         @endif
                                         </tr> --}}
                                         {{-- <tr>
@@ -659,11 +575,9 @@
                                             <td>{{$rca->utility}}</td>
                                         <td>{{$rca->bm_utility}}</td>
                                         @if($rca->am_utility!=null)
-                                        <td><input class="form-control" type="text" id="all_utility" name="am_utility"
-                                                value="{{$rca->am_utility}}"></td>
+                                        <td><input class="form-control" type="text" id="all_utility" name="am_utility" value="{{$rca->am_utility}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_utility" name="am_utility"
-                                                value="{{$rca->bm_utility}}"></td>
+                                        <td><input class="form-control" type="text" id="all_utility" name="am_utility" value="{{$rca->bm_utility}}"></td>
                                         @endif
 
                                         </tr> --}}
@@ -672,11 +586,9 @@
                                             <td>{{$rca->saving}}</td>
                                         <td>{{$rca->bm_saving}}</td>
                                         @if($rca->am_saving!=null)
-                                        <td><input class="form-control" type="text" id="all_saving" name="am_saving"
-                                                value="{{$rca->am_saving}}"></td>
+                                        <td><input class="form-control" type="text" id="all_saving" name="am_saving" value="{{$rca->am_saving}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_saving" name="am_saving"
-                                                value="{{$rca->bm_saving}}"></td>
+                                        <td><input class="form-control" type="text" id="all_saving" name="am_saving" value="{{$rca->bm_saving}}"></td>
                                         @endif
                                         </tr> --}}
                                         <tr>
@@ -684,11 +596,9 @@
                                             <td>{{$rca->other}}</td>
                                             <td>{{$rca->bm_other}}</td>
                                             @if($rca->am_other!=null)
-                                            <td><input class="form-control" type="text" id="all_other" name="am_other"
-                                                    value="{{$rca->am_other}}"></td>
+                                            <td><input class="form-control" type="text" id="all_other" name="am_other" value="{{$rca->am_other}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_other" name="am_other"
-                                                    value="{{$rca->bm_other}}"></td>
+                                            <td><input class="form-control" type="text" id="all_other" name="am_other" value="{{$rca->bm_other}}"></td>
                                             @endif
 
                                         </tr>
@@ -709,11 +619,9 @@
                                             <td>{{$rca->debt}}</td>
                                             <td>{{$rca->bm_debt}}</td>
                                             @if($rca->am_debt!=null)
-                                            <td><input class="form-control" type="text" id="all_debt" name="am_debt"
-                                                    value="{{$rca->am_debt}}"></td>
+                                            <td><input class="form-control" type="text" id="all_debt" name="am_debt" value="{{$rca->am_debt}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_debt" name="am_debt"
-                                                    value="{{$rca->bm_debt}}"></td>
+                                            <td><input class="form-control" type="text" id="all_debt" name="am_debt" value="{{$rca->bm_debt}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -721,11 +629,9 @@
                                             <td>{{$rca->monthly_cash}}</td>
                                             <td>{{$rca->bm_monthly_cash}}</td>
                                             @if($rca->am_monthly_cash!=null)
-                                            <td><input class="form-control" type="text" id="all_monthly_cash"
-                                                    name="am_monthly_cash" value="{{$rca->am_monthly_cash}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthly_cash" name="am_monthly_cash" value="{{$rca->am_monthly_cash}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_monthly_cash"
-                                                    name="am_monthly_cash" value="{{$rca->bm_monthly_cash}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthly_cash" name="am_monthly_cash" value="{{$rca->bm_monthly_cash}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -733,13 +639,9 @@
                                             <td>{{$rca->instal_proposloan}}</td>
                                             <td>{{$rca->bm_instal_proposloan}}</td>
                                             @if($rca->am_instal_proposloan!=null)
-                                            <td><input class="form-control" type="text" id="all_instal_proposloan"
-                                                    name="am_instal_proposloan" value="{{$rca->am_instal_proposloan}}">
-                                            </td>
+                                            <td><input class="form-control" type="text" id="all_instal_proposloan" name="am_instal_proposloan" value="{{$rca->am_instal_proposloan}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_instal_proposloan"
-                                                    name="am_instal_proposloan" value="{{$rca->bm_instal_proposloan}}">
-                                            </td>
+                                            <td><input class="form-control" type="text" id="all_instal_proposloan" name="am_instal_proposloan" value="{{$rca->bm_instal_proposloan}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -750,8 +652,7 @@
                                                 @php
                                                 if($rca->monthly_cash !=0 and $rca->instal_proposloan !=0)
                                                 {
-                                                $tolerance =
-                                                number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                $tolerance = number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
                                                 }
                                                 else{
                                                 $tolerance=0;
@@ -766,8 +667,7 @@
                                                 @php
                                                 if($rca->bm_monthly_cash !=0 and $rca->bm_instal_proposloan !=0)
                                                 {
-                                                $bmTolerance =
-                                                number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                $bmTolerance = number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
                                                 }
                                                 else
                                                 {
@@ -785,8 +685,7 @@
                                             @php
                                             if($rca->am_instal_proposloan !=0 and $rca->am_monthly_cash !=0)
                                             {
-                                            $amTolerance =
-                                            number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                            $amTolerance = number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
                                             }
                                             @endphp
                                             <td>{{ $amTolerance }}</td>
@@ -794,8 +693,7 @@
                                             @php
                                             if($rca->bm_instal_proposloan !=0 and $rca->am_monthly_cash !=0)
                                             {
-                                            $amTolerance =
-                                            number_format(($rca->bm_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                            $amTolerance = number_format(($rca->bm_instal_proposloan/$rca->am_monthly_cash)*100,2);
                                             }
 
                                             @endphp
@@ -804,15 +702,13 @@
                                             @php
                                             if($rca->am_instal_proposloan !=0 and $rca->bm_monthly_cash !=0)
                                             {
-                                            $amTolerance =
-                                            number_format(($rca->am_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                            $amTolerance = number_format(($rca->am_instal_proposloan/$rca->bm_monthly_cash)*100,2);
                                             }
 
                                             @endphp
                                             <td>{{ $amTolerance }}</td>
                                             @else
-                                            <td>@if($rca->bm_instal_proposloan!=null and
-                                                $rca->bm_monthly_cash!=null){{ $bmTolerance }} @endif</td>
+                                            <td>@if($rca->bm_instal_proposloan!=null and $rca->bm_monthly_cash!=null){{ $bmTolerance }} @endif</td>
                                             @endif
                                         </tr>
 
@@ -852,13 +748,9 @@
                                             <td>{{$rca->bm_monthlyincome_main}}</td>
                                             <td>{{$rca->am_monthlyincome_main}}</td>
                                             @if($rca->rm_monthlyincome_main!=null)
-                                            <td><input class="form-control" type="text" id="all_monthlyincome_main"
-                                                    name="rm_monthlyincome_main"
-                                                    value="{{$rca->rm_monthlyincome_main}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_main" name="rm_monthlyincome_main" value="{{$rca->rm_monthlyincome_main}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_monthlyincome_main"
-                                                    name="rm_monthlyincome_main"
-                                                    value="{{$rca->am_monthlyincome_main}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_main" name="rm_monthlyincome_main" value="{{$rca->am_monthlyincome_main}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -867,15 +759,9 @@
                                             <td>{{$rca->bm_monthlyincome_spouse_child}}</td>
                                             <td>{{$rca->am_monthlyincome_spouse_child}}</td>
                                             @if($rca->rm_monthlyincome_spouse_child!=null)
-                                            <td><input class="form-control" type="text"
-                                                    id="all_monthlyincome_spouse_child"
-                                                    name="rm_monthlyincome_spouse_child"
-                                                    value="{{$rca->rm_monthlyincome_spouse_child}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_spouse_child" name="rm_monthlyincome_spouse_child" value="{{$rca->rm_monthlyincome_spouse_child}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text"
-                                                    id="all_monthlyincome_spouse_child"
-                                                    name="rm_monthlyincome_spouse_child"
-                                                    value="{{$rca->am_monthlyincome_spouse_child}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthlyincome_spouse_child" name="rm_monthlyincome_spouse_child" value="{{$rca->am_monthlyincome_spouse_child}}"></td>
                                             @endif
                                         </tr>
                                         {{-- <tr>
@@ -884,13 +770,9 @@
                                         <td>{{$rca->bm_monthlyincome_other}}</td>
                                         <td>{{$rca->am_monthlyincome_other}}</td>
                                         @if($rca->rm_monthlyincome_other!=null)
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other"
-                                                name="rm_monthlyincome_other" value="{{$rca->rm_monthlyincome_other}}">
-                                        </td>
+                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="rm_monthlyincome_other" value="{{$rca->rm_monthlyincome_other}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other"
-                                                name="rm_monthlyincome_other" value="{{$rca->am_monthlyincome_other}}">
-                                        </td>
+                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="rm_monthlyincome_other" value="{{$rca->am_monthlyincome_other}}"></td>
                                         @endif
                                         </tr> --}}
                                         <tr>
@@ -912,11 +794,9 @@
                                             <td>{{$rca->bm_house_rent}}</td>
                                             <td>{{$rca->am_house_rent}}</td>
                                             @if($rca->rm_house_rent!=null)
-                                            <td><input class="form-control" type="text" id="all_house_rent"
-                                                    name="rm_house_rent" value="{{$rca->rm_house_rent}}"></td>
+                                            <td><input class="form-control" type="text" id="all_house_rent" name="rm_house_rent" value="{{$rca->rm_house_rent}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_house_rent"
-                                                    name="rm_house_rent" value="{{$rca->am_house_rent}}"></td>
+                                            <td><input class="form-control" type="text" id="all_house_rent" name="rm_house_rent" value="{{$rca->am_house_rent}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -925,11 +805,9 @@
                                             <td>{{$rca->bm_food}}</td>
                                             <td>{{$rca->am_food}}</td>
                                             @if($rca->rm_food!=null)
-                                            <td><input class="form-control" type="text" id="all_food" name="rm_food"
-                                                    value="{{$rca->rm_food}}"></td>
+                                            <td><input class="form-control" type="text" id="all_food" name="rm_food" value="{{$rca->rm_food}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_food" name="rm_food"
-                                                    value="{{$rca->am_food}}"></td>
+                                            <td><input class="form-control" type="text" id="all_food" name="rm_food" value="{{$rca->am_food}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -938,11 +816,9 @@
                                             <td>{{$rca->bm_education}}</td>
                                             <td>{{$rca->am_education}}</td>
                                             @if($rca->rm_education!=null)
-                                            <td><input class="form-control" type="text" id="all_education"
-                                                    name="rm_education" value="{{$rca->rm_education}}"></td>
+                                            <td><input class="form-control" type="text" id="all_education" name="rm_education" value="{{$rca->rm_education}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_education"
-                                                    name="rm_education" value="{{$rca->am_education}}"></td>
+                                            <td><input class="form-control" type="text" id="all_education" name="rm_education" value="{{$rca->am_education}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -951,11 +827,9 @@
                                             <td>{{$rca->bm_medical}}</td>
                                             <td>{{$rca->am_medical}}</td>
                                             @if($rca->rm_medical!=null)
-                                            <td><input class="form-control" type="text" id="all_medical"
-                                                    name="rm_medical" value="{{$rca->rm_medical}}"></td>
+                                            <td><input class="form-control" type="text" id="all_medical" name="rm_medical" value="{{$rca->rm_medical}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_medical"
-                                                    name="rm_medical" value="{{$rca->am_medical}}"></td>
+                                            <td><input class="form-control" type="text" id="all_medical" name="rm_medical" value="{{$rca->am_medical}}"></td>
                                             @endif
                                         </tr>
                                         {{-- <tr>
@@ -964,11 +838,9 @@
                                         <td>{{$rca->bm_festive}}</td>
                                         <td>{{$rca->am_festive}}</td>
                                         @if($rca->rm_festive!=null)
-                                        <td><input class="form-control" type="text" id="all_festive" name="rm_festive"
-                                                value="{{$rca->rm_festive}}"></td>
+                                        <td><input class="form-control" type="text" id="all_festive" name="rm_festive" value="{{$rca->rm_festive}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_festive" name="rm_festive"
-                                                value="{{$rca->am_festive}}"></td>
+                                        <td><input class="form-control" type="text" id="all_festive" name="rm_festive" value="{{$rca->am_festive}}"></td>
                                         @endif
                                         </tr> --}}
                                         {{-- <tr>
@@ -977,11 +849,9 @@
                                         <td>{{$rca->bm_utility}}</td>
                                         <td>{{$rca->am_utility}}</td>
                                         @if($rca->rm_utility!=null)
-                                        <td><input class="form-control" type="text" id="all_utility" name="rm_utility"
-                                                value="{{$rca->rm_utility}}"></td>
+                                        <td><input class="form-control" type="text" id="all_utility" name="rm_utility" value="{{$rca->rm_utility}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_utility" name="rm_utility"
-                                                value="{{$rca->am_utility}}"></td>
+                                        <td><input class="form-control" type="text" id="all_utility" name="rm_utility" value="{{$rca->am_utility}}"></td>
                                         @endif
                                         </tr> --}}
                                         {{-- <tr>
@@ -990,11 +860,9 @@
                                         <td>{{$rca->bm_saving}}</td>
                                         <td>{{$rca->am_saving}}</td>
                                         @if($rca->rm_saving!=null)
-                                        <td><input class="form-control" type="text" id="all_saving" name="rm_saving"
-                                                value="{{$rca->rm_saving}}"></td>
+                                        <td><input class="form-control" type="text" id="all_saving" name="rm_saving" value="{{$rca->rm_saving}}"></td>
                                         @else
-                                        <td><input class="form-control" type="text" id="all_saving" name="rm_saving"
-                                                value="{{$rca->am_saving}}"></td>
+                                        <td><input class="form-control" type="text" id="all_saving" name="rm_saving" value="{{$rca->am_saving}}"></td>
                                         @endif
                                         </tr> --}}
                                         <tr>
@@ -1003,11 +871,9 @@
                                             <td>{{$rca->bm_other}}</td>
                                             <td>{{$rca->am_other}}</td>
                                             @if($rca->rm_other!=null)
-                                            <td><input class="form-control" type="text" id="all_other" name="rm_other"
-                                                    value="{{$rca->rm_other}}"></td>
+                                            <td><input class="form-control" type="text" id="all_other" name="rm_other" value="{{$rca->rm_other}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_other" name="rm_other"
-                                                    value="{{$rca->am_other}}"></td>
+                                            <td><input class="form-control" type="text" id="all_other" name="rm_other" value="{{$rca->am_other}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -1029,11 +895,9 @@
                                             <td>{{$rca->bm_debt}}</td>
                                             <td>{{$rca->am_debt}}</td>
                                             @if($rca->rm_debt!=null)
-                                            <td><input class="form-control" type="text" id="all_debt" name="rm_debt"
-                                                    value="{{$rca->rm_debt}}"></td>
+                                            <td><input class="form-control" type="text" id="all_debt" name="rm_debt" value="{{$rca->rm_debt}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_debt" name="rm_debt"
-                                                    value="{{$rca->am_debt}}"></td>
+                                            <td><input class="form-control" type="text" id="all_debt" name="rm_debt" value="{{$rca->am_debt}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -1042,11 +906,9 @@
                                             <td>{{$rca->bm_monthly_cash}}</td>
                                             <td>{{$rca->am_monthly_cash}}</td>
                                             @if($rca->rm_monthly_cash!=null)
-                                            <td><input class="form-control" type="text" id="all_monthly_cash"
-                                                    name="rm_monthly_cash" value="{{$rca->rm_monthly_cash}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthly_cash" name="rm_monthly_cash" value="{{$rca->rm_monthly_cash}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_monthly_cash"
-                                                    name="rm_monthly_cash" value="{{$rca->am_monthly_cash}}"></td>
+                                            <td><input class="form-control" type="text" id="all_monthly_cash" name="rm_monthly_cash" value="{{$rca->am_monthly_cash}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -1055,13 +917,9 @@
                                             <td>{{$rca->bm_instal_proposloan}}</td>
                                             <td>{{$rca->am_instal_proposloan}}</td>
                                             @if($rca->rm_instal_proposloan!=null)
-                                            <td><input class="form-control" type="text" id="all_instal_proposloan"
-                                                    name="rm_instal_proposloan" value="{{$rca->rm_instal_proposloan}}">
-                                            </td>
+                                            <td><input class="form-control" type="text" id="all_instal_proposloan" name="rm_instal_proposloan" value="{{$rca->rm_instal_proposloan}}"></td>
                                             @else
-                                            <td><input class="form-control" type="text" id="all_instal_proposloan"
-                                                    name="rm_instal_proposloan" value="{{$rca->am_instal_proposloan}}">
-                                            </td>
+                                            <td><input class="form-control" type="text" id="all_instal_proposloan" name="rm_instal_proposloan" value="{{$rca->am_instal_proposloan}}"></td>
                                             @endif
                                         </tr>
                                         <tr>
@@ -1069,8 +927,7 @@
                                             <td>
                                                 @if($rca->instal_proposloan!=null and $rca->monthly_cash!=null)
                                                 @php
-                                                $tolerance =
-                                                number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                $tolerance = number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $tolerance }}
                                                 @endif
@@ -1078,8 +935,7 @@
                                             <td>
                                                 @if($rca->bm_instal_proposloan!=null and $rca->bm_monthly_cash!=null)
                                                 @php
-                                                $bmTolerance =
-                                                number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                $bmTolerance = number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $bmTolerance }}
                                                 @endif
@@ -1087,28 +943,24 @@
                                             <td>
                                                 @if($rca->am_instal_proposloan!=null and $rca->am_monthly_cash!=null)
                                                 @php
-                                                $amTolerance =
-                                                number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                                $amTolerance = number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $amTolerance }}
                                                 @endif
                                             </td>
                                             @if($rca->rm_instal_proposloan!=null and $rca->rm_monthly_cash!=null)
                                             @php
-                                            $rmTolerance =
-                                            number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                            $rmTolerance = number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
                                             @endphp
                                             <td>{{ $rmTolerance }}</td>
                                             @elseif($rca->rm_instal_proposloan=null and $rca->rm_monthly_cash!=null)
                                             @php
-                                            $rmTolerance =
-                                            number_format(($rca->am_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                            $rmTolerance = number_format(($rca->am_instal_proposloan/$rca->rm_monthly_cash)*100,2);
                                             @endphp
                                             <td>{{ $rmTolerance }}</td>
                                             @elseif($rca->rm_instal_proposloan!=null and $rca->rm_monthly_cash=null)
                                             @php
-                                            $rmTolerance =
-                                            number_format(($rca->rm_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                            $rmTolerance = number_format(($rca->rm_instal_proposloan/$rca->am_monthly_cash)*100,2);
                                             @endphp
                                             <td>{{ $rmTolerance }}</td>
                                             @else
@@ -1278,8 +1130,7 @@
                                             <td>
                                                 @if($rca->instal_proposloan!=null and $rca->monthly_cash!=null)
                                                 @php
-                                                $tolerance =
-                                                number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                $tolerance = number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $tolerance }}
                                                 @endif
@@ -1287,8 +1138,7 @@
                                             <td>
                                                 @if($rca->bm_instal_proposloan!=null and $rca->bm_monthly_cash!=null)
                                                 @php
-                                                $bmTolerance =
-                                                number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                $bmTolerance = number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $bmTolerance }}
                                                 @endif
@@ -1296,8 +1146,7 @@
                                             <td>
                                                 @if($rca->am_instal_proposloan!=null and $rca->am_monthly_cash!=null)
                                                 @php
-                                                $amTolerance =
-                                                number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                                $amTolerance = number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $amTolerance }}
                                                 @endif
@@ -1305,8 +1154,7 @@
                                             <td>
                                                 @if($rca->rm_instal_proposloan!=null and $rca->rm_monthly_cash!=null)
                                                 @php
-                                                $rmTolerance =
-                                                number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                                $rmTolerance = number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
                                                 @endphp
                                                 {{ $rmTolerance }}
                                                 @endif
@@ -1392,25 +1240,19 @@
                                         <tr>
                                             <td>@lang('loanApproval.label39')</td>
                                             <td colspan="2">
-                                                @if($data->grantor_nidfront_photo)
                                                 <img class="nid_img" src="{{$data->grantor_nidfront_photo}}" alt="">
-                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label40')</td>
                                             <td colspan="2">
-                                                @if($data->grantor_nidback_photo)
                                                 <img class="nid_img" src="{{$data->grantor_nidback_photo}}" alt="">
-                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label41')</td>
                                             <td colspan="2">
-                                                @if($data->grantor_photo)
                                                 <img class="guarantor_img" src="{{$data->grantor_photo}}" alt="">
-                                                @endif
                                             </td>
                                         </tr>
                                     </table>
@@ -1479,24 +1321,12 @@
                                         <tr>
                                             <td>@lang('loanApproval.label47')</td>
                                             <td colspan="2">
-                                                @if($data->insurn_gender!= null)
-                                                @php
-                                                $insurn_gender=DB::table($db.'.payload_data')->select('data_name')->where('data_type','genderId')->where('data_id',$data->insurn_gender)->first();
-                                                @endphp
-                                                {{$insurn_gender->data_name}}
-                                                @endif
+                                                {{$data->insurn_gender}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label48')</td>
-                                            <td colspan="2">
-                                                @if($data->insurn_relation!= null)
-                                                @php
-                                                $insurn_relation=DB::table($db.'.payload_data')->select('data_name')->where('data_type','relationshipId')->where('data_id',$data->insurn_relation)->first();
-                                                @endphp
-                                                {{$insurn_relation->data_name}}
-                                                @endif
-                                            </td>
+                                            <td colspan="2">{{$data->insurn_relation}}</td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label49')</td>
@@ -1788,29 +1618,19 @@
                                         <tr>
                                             <td>@lang('admissionApproval.label22')</td>
                                             <td colspan="2">
-                                                @if($admissionData->ReffererIdImg)
-                                                <img class="guarantor_img " src="{{$admissionData->ReffererIdImg}}"
-                                                    alt="Refferer Picture">
-                                                @endif
+                                                <img class="guarantor_img " src="{{$admissionData->ReffererIdImg}}" alt="Refferer Picture">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label23')</td>
                                             <td colspan="2">
-                                                @if($admissionData->ApplicantCpmbinedImg)
-                                                <img class="guarantor_img "
-                                                    src="{{$admissionData->ApplicantCpmbinedImg}}"
-                                                    alt="Combine Picture">
-                                                @endif
+                                                <img class="guarantor_img " src="{{$admissionData->ApplicantCpmbinedImg}}" alt="Combine Picture">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label24')</td>
                                             <td colspan="2">
-                                                @if($admissionData->NomineeIdImg)
-                                                <img class="guarantor_img " src="{{$admissionData->NomineeIdImg}}"
-                                                    alt="Nominee's Images">
-                                                @endif
+                                                <img class="guarantor_img " src="{{$admissionData->NomineeIdImg}}" alt="Nominee's Images">
                                             </td>
                                         </tr>
                                     </table>
@@ -2094,130 +1914,133 @@
                                         <tr class="font_red">
                                             <th colspan="6">@lang('loanApproval.title8')</th>
                                         </tr>
+                                        {{-- <tr>
+                                            <td rowspan="4"></td>
+                                            <td>The borrower and the guarantor have the capacity to repay the loan?</td>
+                                            <td rowspan="4"></td>
+                                            <td colspan="2">
+                                                @if($data->bm_repay_loan!= null)
+                                                @if($data->bm_repay_loan== '1')
+                                                {{"Yes"}}
+                                        @else
+                                        {{"No"}}
+                                        @endif
+                                        @endif
+                                        </td>
+                                        <td rowspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>The borrower has the skills and knowledge to conduct the activity?</td>
+                                            <td colspan="2">
+                                                @if($data->bm_conduct_activity!= null)
+                                                @if($data->bm_conduct_activity== '1')
+                                                {{"Yes"}}
+                                                @else
+                                                {{"No"}}
+                                                @endif
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>The borrower has the confidence to make the decisions and take the
+                                                actions required?</td>
+                                            <td colspan="2">
+                                                @if($data->bm_action_required!= null)
+                                                @if($data->bm_action_required== '1')
+                                                {{"Yes"}}
+                                                @else
+                                                {{"No"}}
+                                                @endif
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>RCA Ratings</td>
+                                            <td colspan="2">
+                                                @if($data->bm_rca_rating!= null)
+                                                @if($data->bm_rca_rating== '1')
+                                                {{"Yes"}}
+                                                @else
+                                                {{"No"}}
+                                                @endif
+                                                @endif
+                                            </td>
+                                        </tr> --}}
                                         <tr>
                                             <td>@lang('loanApproval.label58')</td>
                                             <td colspan="2">
-                                                {{$data->bm_noofChild}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label59')</td>
                                             <td colspan="2">
-                                                {{$data->bm_earningMember}}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label60')</td>
-                                            <td colspan="2">
-                                                {{$data->bm_duration}}
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label61')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_hometown== '1')
-                                                Yes
-                                                @elseif($data->bm_hometown== '0')
-                                                No
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label62')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_landloard== '1')
-                                                Yes
-                                                @elseif($data->bm_landloard== '0')
-                                                No
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label63')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_recomand== '1')
-                                                Yes
-                                                @elseif($data->bm_recomand== '0')
-                                                No
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label64')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_occupation== '1')
-                                                Yes
-                                                @elseif($data->bm_occupation== '0')
-                                                No
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label65')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_aware== '1')
-                                                Yes
-                                                @elseif($data->bm_aware== '0')
-                                                No
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label66')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_grantor== '1')
-                                                Yes
-                                                @elseif($data->bm_grantor== '0')
-                                                No
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label67')</td>
-                                            <td colspan="2">{{$data->bm_socialAcecptRating}}</td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label68')</td>
-                                            <td colspan="2">{{$data->bm_grantorRating}}</td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label69')</td>
-                                            <td colspan="2">{{$data->bm_remarks}}</td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label70')</td>
-                                            <td colspan="2">
-                                                @if($data->bm_clienthouse)
-                                                <img src="{{$data->bm_clienthouse}}" alt="house">
-                                                @endif
-                                            </td>
+                                            <td colspan="2"></td>
                                         </tr>
                                     </table>
                                     <input type="hidden" value="{{$data->id}}" name="id">
                                     <input type="hidden" value="Approve" name="action">
                                     @php
-                                    $authData =
-                                    DB::table($db.'.auths')->where('roleId',session('roll'))->where('processId','3')->where('projectcode',session('projectcode'))->first();
+                                    $authData = DB::table($db.'.auths')->where('roleId',session('roll'))->where('processId','3')->where('projectcode',session('projectcode'))->first();
                                     $authorization = $authData->isAuthorized;
                                     @endphp
-                                    @if($authorization == true and $data->reciverrole==session('roll') and
-                                    $data->status=='1')
+                                    @if($authorization == true and $data->reciverrole==session('roll') and $data->status=='1')
                                     <div class="box-footer">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <a class="btn btn-danger btn-block" id="reject" href="#">Reject</a>
                                             </div>
                                             <div class="col-md-3">
-                                                <a class="btn btn-primary btn-block" id="sendback" href="#">Send
-                                                    Back</a>
+                                                <a class="btn btn-primary btn-block" id="sendback" href="#">Send Back</a>
                                             </div>
                                             <div class="col-md-3">
-                                                <a class="btn btn-secondary btn-block" id="recommend"
-                                                    href="#">Recommend</a>
+                                                <a class="btn btn-secondary btn-block" id="recommend" href="#">Recommend</a>
                                             </div>
                                             <div class="col-md-3">
-                                                <button type="submit" id="approve"
-                                                    class="btn btn-success btn-block">Approve</button>
+                                                <button type="submit" id="approve" class="btn btn-success btn-block">Approve</button>
                                             </div>
                                         </div>
                                     </div>
@@ -2257,8 +2080,7 @@
                     </div>
                     <div>
                         <input type="hidden" value="" name="all_monthlyincome_main1" id="all_monthlyincome_main1">
-                        <input type="hidden" value="" name="all_monthlyincome_spouse_child1"
-                            id="all_monthlyincome_spouse_child1">
+                        <input type="hidden" value="" name="all_monthlyincome_spouse_child1" id="all_monthlyincome_spouse_child1">
                         <input type="hidden" value="" name="all_monthlyincome_other1" id="all_monthlyincome_other1">
                         <input type="hidden" value="" name="all_house_rent1" id="all_house_rent1">
                         <input type="hidden" value="" name="all_food1" id="all_food1">
@@ -2325,28 +2147,28 @@
 @section('script')
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         $('.click').click(false);
-        $('.btnNext').click(function () {
+        $('.btnNext').click(function() {
             $('.nav-pills .active').parent().next('li').find('a').trigger('click');
             $('.click .active').parent().next('li').find('a').addClass('active');
             $('.click .active').parent().prev('li').find('a').removeClass('active');
         });
 
-        $('.btnPrevious').click(function () {
+        $('.btnPrevious').click(function() {
             $('.nav-pills .active').parent().prev('li').find('a').trigger('click');
             $('.click .active').parent().prev('li').find('a').addClass('active');
             $('.click .active').parent().next('li').find('a').removeClass('active');
         });
 
 
-        $('#reject').on('click', function () {
+        $('#reject').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
             $("#action").append(`<input type="hidden" value="Reject" name="action">`);
 
         })
-        $('#sendback').on('click', function () {
+        $('#sendback').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
             $("#action").append(`<input type="hidden" value="Sendback" name="action">`);
             let all_monthlyincome_main = $('#all_monthlyincome_main').val();
@@ -2378,7 +2200,7 @@
             let all_instal_proposloan = $('#all_instal_proposloan').val();
             $("#all_instal_proposloan1").val(all_instal_proposloan);
         })
-        $('#recommend').on('click', function () {
+        $('#recommend').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
             $("#action").append(`<input type="hidden" value="Recommend" name="action">`);
             let all_monthlyincome_main = $('#all_monthlyincome_main').val();
@@ -2410,11 +2232,11 @@
             let all_instal_proposloan = $('#all_instal_proposloan').val();
             $("#all_instal_proposloan1").val(all_instal_proposloan);
         })
-        $('.close').on('click', function () {
+        $('.close').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'none';
         })
 
-        $('#lastCloseLoan').on('click', function () {
+        $('#lastCloseLoan').on('click', function() {
             document.querySelector('#closeLoanModal').style.display = 'block';
             var memId = $('#erpMemId').val();
             $.ajax({
@@ -2424,7 +2246,7 @@
                     "_token": "{{ csrf_token() }}",
                     memId: memId
                 },
-                success: function (data) {
+                success: function(data) {
                     console.log(data);
 
                     $("#closeLoanTable").empty();
@@ -2441,7 +2263,7 @@
                         $("#installmentAmount").append(closeLoanData['InstallmentAmount']);
                         $("#disburseDate").append(closeLoanData['DisburseDate']);
                         $("#disbursedAmount").append(closeLoanData['DisbursedAmount']);
-                        $.each(closeLoanData['Collections'], function (key, value) {
+                        $.each(closeLoanData['Collections'], function(key, value) {
                             if (value.CollectionMethod == 1) {
                                 var colMethod = "Cash";
                             } else if (value.CollectionMethod == 5) {
@@ -2469,12 +2291,11 @@
                 }
             });
         });
-        $('.close').on('click', function () {
+        $('.close').on('click', function() {
             document.querySelector('#closeLoanModal').style.display = 'none';
         })
 
     });
-
 </script>
 
 @endsection
