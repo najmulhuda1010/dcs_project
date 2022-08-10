@@ -303,18 +303,36 @@
                                         $dmComment = DB::table($db.'.document_history')->select('comment')->where('doc_id',$data->id)->where('doc_type','loan')->where('projectcode',session('projectcode'))->where('roleid',4)->first();
                                         @endphp
 
-                                        <p>BM:{{$bmComment}}</p>
+                                        @if($bmComment)
+                                        <p>BM:{{$bmComment->comment}}</p>
+                                        @endif
+
+                                        @if($amComment)
                                         @if(session('role_designation') == 'RM')
-                                        <p>AM:{{$amComment}}</p>
+                                        <p>AM:{{$amComment->comment}}</p>
                                         @endif
+                                        @endif
+
+
                                         @if(session('role_designation') == 'DM')
-                                        <p>AM:{{$amComment}}</p>
-                                        <p>RM:{{$rmComment}}</p>
+                                        @if($amComment)
+                                        <p>AM:{{$amComment->comment}}</p>
                                         @endif
+                                        @if($rmComment)
+                                        <p>RM:{{$rmComment->comment}}</p>
+                                        @endif
+                                        @endif
+
                                         @if(session('role_designation') == 'HO')
-                                        <p>AM:{{$amComment}}</p>
-                                        <p>RM:{{$rmComment}}</p>
-                                        <p>DM:{{$dmComment}}</p>
+                                        @if($amComment)
+                                        <p>AM:{{$amComment->comment}}</p>
+                                        @endif
+                                        @if($rmComment)
+                                        <p>RM:{{$rmComment->comment}}</p>
+                                        @endif
+                                        @if($dmComment)
+                                        <p>DM:{{$dmComment->comment}}</p>
+                                        @endif
                                         @endif
                                     </div>
                                 </div>
