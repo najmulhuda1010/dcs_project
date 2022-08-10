@@ -16,6 +16,7 @@ class LoanController extends Controller
 
     public function index()
     {
+
         $db = config('database.db');
         $role_designation = session('role_designation');
         // dd(session('projectcode'));
@@ -2984,16 +2985,6 @@ class LoanController extends Controller
 
     public function approve_loan(Request $request)
     {
-
-
-        // $error1='{"status":"E","errors":[{"id":"6b57f13d-2eed-471a-b101-58471b056c4a","fieldErrors":[{"field":"memberId","message":"Member Information could not be null."},{"field":"subSectorId","message":"must not be null"},{"field":"loanApprover","message":"Provided id not available."},{"field":"frequencyId","message":"Loan Product Frequency not found."}]}]}';
-        // $error1 = json_decode($error1);
-
-        // $error1='{"status":"E","errors":[{"id":"4f3f2495-36cd-4757-bc68-fcd6f5d93ea0","message":"Buffer Member already exists with given id."}]}';
-        // $error1 = json_decode($error1);
-        // $error1='{"status":"E", "message":"golu goli."}';
-        // $error1 = json_decode($error1);
-        // dd($error1);
         $db = config('database.db');
         $doc_type = "loan";
         $role = session('roll');
@@ -3035,7 +3026,6 @@ class LoanController extends Controller
 
         $collectionfordocument = json_decode($documentoutput);
         // dd($collectionfordocument);
-
 
         if ($collectionfordocument != NULL) {
             if ($collectionfordocument->status == "E") {

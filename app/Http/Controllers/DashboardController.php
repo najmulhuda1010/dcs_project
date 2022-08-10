@@ -259,7 +259,7 @@ class DashboardController extends Controller
 
     public function login()
     {
-        return view('loginpage');
+        return redirect('https://trendxstage.brac.net/home');
     }
 
     public function tokenVerify()
@@ -1231,7 +1231,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1291,7 +1296,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1352,7 +1362,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1411,7 +1426,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1474,7 +1494,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1534,7 +1559,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1597,7 +1627,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1658,7 +1693,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1721,7 +1761,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1784,7 +1829,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1844,7 +1894,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1908,7 +1963,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -1955,7 +2015,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
@@ -2004,7 +2069,12 @@ class DashboardController extends Controller
                 $db = config('database.db');
                 $productName = '';
                 $loan_product = $datas->loan_product;
-                $query = DB::table($db . '.product_details')->where('id', $loan_product)->first();
+                if (session('projectcode') == '015') {
+                    $projectcode = "15";
+                } elseif (session('projectcode') == '015') {
+                    $projectcode = "60";
+                }
+                $query = DB::table($db . '.product_project_member_category')->select('productname')->where('productid', $loan_product)->where('projectcode', $projectcode)->first();
                 if ($query) {
                     $productName = $query->productname;
                     return $productName;
