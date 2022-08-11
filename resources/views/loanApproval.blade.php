@@ -1792,6 +1792,7 @@
                                                 @if($admissionApi->MemberIDCard!= null)
                                                 @php
                                                 $idType=DB::table($db.'.payload_data')->select('data_name')->where('data_type','cardTypeId')->where('data_id',$admissionApi->MemberIDCard->CardTypeId)->first();
+                                                dd($idType);
                                                 @endphp
                                                 {{$idType->data_name}}
                                                 @endif
