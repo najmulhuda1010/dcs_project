@@ -68,7 +68,7 @@ return [
     */
 
     'timezone' => 'UTC',
-    
+
     'timezone' => 'Asia/Dhaka',
 
     /*
@@ -230,7 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-		'Input' => Illuminate\Support\Facades\Input::class
+        'Input' => Illuminate\Support\Facades\Input::class
     ],
 
 ];
