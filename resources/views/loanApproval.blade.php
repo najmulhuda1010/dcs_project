@@ -570,19 +570,6 @@
                                             @endif
 
                                         </tr>
-                                        {{-- <tr>
-                                            <td>Income from other family</td>
-                                            <td>{{$rca->monthlyincome_other}}</td>
-                                        <td>{{$rca->bm_monthlyincome_other}}</td>
-                                        @if($rca->am_monthlyincome_other!=null)
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="am_monthlyincome_other" value="{{$rca->am_monthlyincome_other}}">
-                                        </td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="am_monthlyincome_other" value="{{$rca->bm_monthlyincome_other}}">
-                                        </td>
-                                        @endif
-
-                                        </tr> --}}
                                         <tr>
                                             <th colspan="7" class="bgColor">@lang('loanApproval.title2')</th>
                                         </tr>
@@ -637,37 +624,6 @@
                                             @endif
 
                                         </tr>
-                                        {{-- <tr>
-                                            <td>@lang('loanApproval.label23')</td>
-                                            <td>{{$rca->festive}}</td>
-                                        <td>{{$rca->bm_festive}}</td>
-                                        @if($rca->am_festive!=null)
-                                        <td><input class="form-control" type="text" id="all_festive" name="am_festive" value="{{$rca->am_festive}}"></td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_festive" name="am_festive" value="{{$rca->bm_festive}}"></td>
-                                        @endif
-                                        </tr> --}}
-                                        {{-- <tr>
-                                            <td>@lang('loanApproval.label24')</td>
-                                            <td>{{$rca->utility}}</td>
-                                        <td>{{$rca->bm_utility}}</td>
-                                        @if($rca->am_utility!=null)
-                                        <td><input class="form-control" type="text" id="all_utility" name="am_utility" value="{{$rca->am_utility}}"></td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_utility" name="am_utility" value="{{$rca->bm_utility}}"></td>
-                                        @endif
-
-                                        </tr> --}}
-                                        {{-- <tr>
-                                            <td>Saving in other MFI/Bank/Brac</td>
-                                            <td>{{$rca->saving}}</td>
-                                        <td>{{$rca->bm_saving}}</td>
-                                        @if($rca->am_saving!=null)
-                                        <td><input class="form-control" type="text" id="all_saving" name="am_saving" value="{{$rca->am_saving}}"></td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_saving" name="am_saving" value="{{$rca->bm_saving}}"></td>
-                                        @endif
-                                        </tr> --}}
                                         <tr>
                                             <td>@lang('loanApproval.label25')</td>
                                             <td>{{$rca->other}}</td>
@@ -796,7 +752,106 @@
                                                 $rca->bm_monthly_cash!=null){{ $bmTolerance }} @endif</td>
                                             @endif
                                         </tr>
-
+                                        <tr>
+                                            <th colspan="7" class="bgColor">@lang('loanApproval.title9')</th>
+                                        </tr>
+                                        <tr class="text_align">
+                                            <td rowspan="4"></td>
+                                            <td>@lang('loanApproval.label12')</td>
+                                            <td rowspan="4"></td>
+                                            <td>@lang('loanApproval.label13')</td>
+                                            <td>@lang('loanApproval.label14')</td>
+                                            <td>@lang('loanApproval.label15')</td>
+                                            <td rowspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label73')</td>
+                                            <td>{{$rca->po_seasonal_income}}</td>
+                                            <td>{{$rca->bm_seasonal_income}}</td>
+                                            @if($rca->am_seasonal_income!=null)
+                                            <td><input class="form-control" type="text" id="all_seasonal_income" name="am_seasonal_income" value="{{$rca->am_seasonal_income}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_seasonal_income" name="am_seasonal_income" value="{{$rca->bm_seasonal_income}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label74')</td>
+                                            <td>{{$rca->po_incomeformfixedassets}}</td>
+                                            <td>{{$rca->bm_incomeformfixedassets}}</td>
+                                            @if($rca->am_incomeformfixedassets!=null)
+                                            <td><input class="form-control" type="text" id="all_incomeformfixedassets" name="am_incomeformfixedassets" value="{{$rca->am_incomeformfixedassets}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_incomeformfixedassets" name="am_incomeformfixedassets" value="{{$rca->bm_incomeformfixedassets}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label75')</td>
+                                            <td>{{$rca->po_imcomeformsavings}}</td>
+                                            <td>{{$rca->bm_imcomeformsavings}}</td>
+                                            @if($rca->am_imcomeformsavings!=null)
+                                            <td><input class="form-control" type="text" id="all_imcomeformsavings" name="am_imcomeformsavings" value="{{$rca->am_imcomeformsavings}}">
+                                            </td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_imcomeformsavings" name="am_imcomeformsavings" value="{{$rca->bm_imcomeformsavings}}">
+                                            </td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <th colspan="7" class="bgColor">@lang('loanApproval.title10')</th>
+                                        </tr>
+                                        <tr class="text_align">
+                                            <td rowspan="5"></td>
+                                            <td>@lang('loanApproval.label18')</td>
+                                            <td rowspan="5"></td>
+                                            <td>@lang('loanApproval.label13')</td>
+                                            <td>@lang('loanApproval.label14')</td>
+                                            <td>@lang('loanApproval.label15')</td>
+                                            <td rowspan="5"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label76')</td>
+                                            <td>{{$rca->po_houseconstructioncost}}</td>
+                                            <td>{{$rca->bm_houseconstructioncost}}</td>
+                                            @if($rca->am_houseconstructioncost!=null)
+                                            <td><input class="form-control" type="text" id="all_houseconstructioncost" name="am_houseconstructioncost" value="{{$rca->am_houseconstructioncost}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_houseconstructioncost" name="am_houseconstructioncost" value="{{$rca->bm_houseconstructioncost}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label77')</td>
+                                            <td>{{$rca->po_expendingonmarriage}}</td>
+                                            <td>{{$rca->bm_expendingonmarriage}}</td>
+                                            @if($rca->am_expendingonmarriage!=null)
+                                            <td><input class="form-control" type="text" id="all_expendingonmarriage" name="am_expendingonmarriage" value="{{$rca->am_expendingonmarriage}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_expendingonmarriage" name="am_expendingonmarriage" value="{{$rca->bm_expendingonmarriage}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label78')</td>
+                                            <td>{{$rca->po_operation_childBirth}}</td>
+                                            <td>{{$rca->bm_operation_childBirth}}</td>
+                                            @if($rca->am_operation_childBirth!=null)
+                                            <td><input class="form-control" type="text" id="all_operation_childBirth" name="am_operation_childBirth" value="{{$rca->am_operation_childBirth}}">
+                                            </td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_operation_childBirth" name="am_operation_childBirth" value="{{$rca->bm_operation_childBirth}}">
+                                            </td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label79')</td>
+                                            <td>{{$rca->po_foreigntravel}}</td>
+                                            <td>{{$rca->bm_foreigntravel}}</td>
+                                            @if($rca->am_foreigntravel!=null)
+                                            <td><input class="form-control" type="text" id="all_foreigntravel" name="am_foreigntravel" value="{{$rca->am_foreigntravel}}">
+                                            </td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_foreigntravel" name="am_foreigntravel" value="{{$rca->bm_foreigntravel}}">
+                                            </td>
+                                            @endif
+                                        </tr>
                                     </table>
                                     @endif
 
@@ -849,19 +904,6 @@
                                             <td><input class="form-control" type="text" id="all_monthlyincome_spouse_child" name="rm_monthlyincome_spouse_child" value="{{$rca->am_monthlyincome_spouse_child}}"></td>
                                             @endif
                                         </tr>
-                                        {{-- <tr>
-                                            <td>Income from other family</td>
-                                            <td>{{$rca->monthlyincome_other}}</td>
-                                        <td>{{$rca->bm_monthlyincome_other}}</td>
-                                        <td>{{$rca->am_monthlyincome_other}}</td>
-                                        @if($rca->rm_monthlyincome_other!=null)
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="rm_monthlyincome_other" value="{{$rca->rm_monthlyincome_other}}">
-                                        </td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_monthlyincome_other" name="rm_monthlyincome_other" value="{{$rca->am_monthlyincome_other}}">
-                                        </td>
-                                        @endif
-                                        </tr> --}}
                                         <tr>
                                             <th colspan="8" class="bgColor">@lang('loanApproval.title2')</th>
                                         </tr>
@@ -919,39 +961,6 @@
                                             <td><input class="form-control" type="text" id="all_medical" name="rm_medical" value="{{$rca->am_medical}}"></td>
                                             @endif
                                         </tr>
-                                        {{-- <tr>
-                                            <td>@lang('loanApproval.label23')</td>
-                                            <td>{{$rca->festive}}</td>
-                                        <td>{{$rca->bm_festive}}</td>
-                                        <td>{{$rca->am_festive}}</td>
-                                        @if($rca->rm_festive!=null)
-                                        <td><input class="form-control" type="text" id="all_festive" name="rm_festive" value="{{$rca->rm_festive}}"></td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_festive" name="rm_festive" value="{{$rca->am_festive}}"></td>
-                                        @endif
-                                        </tr> --}}
-                                        {{-- <tr>
-                                            <td>@lang('loanApproval.label24')</td>
-                                            <td>{{$rca->utility}}</td>
-                                        <td>{{$rca->bm_utility}}</td>
-                                        <td>{{$rca->am_utility}}</td>
-                                        @if($rca->rm_utility!=null)
-                                        <td><input class="form-control" type="text" id="all_utility" name="rm_utility" value="{{$rca->rm_utility}}"></td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_utility" name="rm_utility" value="{{$rca->am_utility}}"></td>
-                                        @endif
-                                        </tr> --}}
-                                        {{-- <tr>
-                                            <td>Saving in other MFI/Bank/Brac</td>
-                                            <td>{{$rca->saving}}</td>
-                                        <td>{{$rca->bm_saving}}</td>
-                                        <td>{{$rca->am_saving}}</td>
-                                        @if($rca->rm_saving!=null)
-                                        <td><input class="form-control" type="text" id="all_saving" name="rm_saving" value="{{$rca->rm_saving}}"></td>
-                                        @else
-                                        <td><input class="form-control" type="text" id="all_saving" name="rm_saving" value="{{$rca->am_saving}}"></td>
-                                        @endif
-                                        </tr> --}}
                                         <tr>
                                             <td>@lang('loanApproval.label25')</td>
                                             <td>{{$rca->other}}</td>
@@ -1066,6 +1075,115 @@
                                             </td>
                                             @endif
                                         </tr>
+                                        <tr>
+                                            <th colspan="7" class="bgColor">@lang('loanApproval.title9')</th>
+                                        </tr>
+                                        <tr class="text_align">
+                                            <td rowspan="4"></td>
+                                            <td>@lang('loanApproval.label12')</td>
+                                            <td rowspan="4"></td>
+                                            <td>@lang('loanApproval.label13')</td>
+                                            <td>@lang('loanApproval.label14')</td>
+                                            <td>@lang('loanApproval.label15')</td>
+                                            <td>@lang('loanApproval.label72')</td>
+                                            <td rowspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label73')</td>
+                                            <td>{{$rca->po_seasonal_income}}</td>
+                                            <td>{{$rca->bm_seasonal_income}}</td>
+                                            <td>{{$rca->am_seasonal_income}}</td>
+                                            @if($rca->rm_seasonal_income!=null)
+                                            <td><input class="form-control" type="text" id="all_seasonal_income" name="rm_seasonal_income" value="{{$rca->rm_seasonal_income}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_seasonal_income" name="rm_seasonal_income" value="{{$rca->am_seasonal_income}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label74')</td>
+                                            <td>{{$rca->po_incomeformfixedassets}}</td>
+                                            <td>{{$rca->bm_iancomeformfixedassets}}</td>
+                                            <td>{{$rca->am_iancomeformfixedassets}}</td>
+                                            @if($rca->rm_incomeformfixedassets!=null)
+                                            <td><input class="form-control" type="text" id="all_incomeformfixedassets" name="rm_incomeformfixedassets" value="{{$rca->rm_incomeformfixedassets}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_incomeformfixedassets" name="rm_incomeformfixedassets" value="{{$rca->am_incomeformfixedassets}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label75')</td>
+                                            <td>{{$rca->po_imcomeformsavings}}</td>
+                                            <td>{{$rca->bm_imcomeformsavings}}</td>
+                                            <td>{{$rca->am_imcomeformsavings}}</td>
+                                            @if($rca->rm_imcomeformsavings!=null)
+                                            <td><input class="form-control" type="text" id="all_imcomeformsavings" name="rm_imcomeformsavings" value="{{$rca->rm_imcomeformsavings}}">
+                                            </td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_imcomeformsavings" name="rm_imcomeformsavings" value="{{$rca->am_imcomeformsavings}}">
+                                            </td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <th colspan="7" class="bgColor">@lang('loanApproval.title10')</th>
+                                        </tr>
+                                        <tr class="text_align">
+                                            <td rowspan="5"></td>
+                                            <td>@lang('loanApproval.label18')</td>
+                                            <td rowspan="5"></td>
+                                            <td>@lang('loanApproval.label13')</td>
+                                            <td>@lang('loanApproval.label14')</td>
+                                            <td>@lang('loanApproval.label15')</td>
+                                            <td>@lang('loanApproval.label72')</td>
+                                            <td rowspan="5"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label76')</td>
+                                            <td>{{$rca->po_houseconstructioncost}}</td>
+                                            <td>{{$rca->bm_houseconstructioncost}}</td>
+                                            <td>{{$rca->am_houseconstructioncost}}</td>
+                                            @if($rca->rm_houseconstructioncost!=null)
+                                            <td><input class="form-control" type="text" id="all_houseconstructioncost" name="rm_houseconstructioncost" value="{{$rca->rm_houseconstructioncost}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_houseconstructioncost" name="rm_houseconstructioncost" value="{{$rca->am_houseconstructioncost}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label77')</td>
+                                            <td>{{$rca->po_expendingonmarriage}}</td>
+                                            <td>{{$rca->bm_expendingonmarriage}}</td>
+                                            <td>{{$rca->am_expendingonmarriage}}</td>
+                                            @if($rca->rm_expendingonmarriage!=null)
+                                            <td><input class="form-control" type="text" id="all_expendingonmarriage" name="rm_expendingonmarriage" value="{{$rca->rm_expendingonmarriage}}"></td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_expendingonmarriage" name="rm_expendingonmarriage" value="{{$rca->am_expendingonmarriage}}"></td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label78')</td>
+                                            <td>{{$rca->po_operation_childBirth}}</td>
+                                            <td>{{$rca->bm_operation_childBirth}}</td>
+                                            <td>{{$rca->am_operation_childBirth}}</td>
+                                            @if($rca->rm_operation_childBirth!=null)
+                                            <td><input class="form-control" type="text" id="all_operation_childBirth" name="rm_operation_childBirth" value="{{$rca->rm_operation_childBirth}}">
+                                            </td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_operation_childBirth" name="rm_operation_childBirth" value="{{$rca->am_operation_childBirth}}">
+                                            </td>
+                                            @endif
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label79')</td>
+                                            <td>{{$rca->po_foreigntravel}}</td>
+                                            <td>{{$rca->bm_foreigntravel}}</td>
+                                            <td>{{$rca->a_foreigntravel}}</td>
+                                            @if($rca->rm_foreigntravel!=null)
+                                            <td><input class="form-control" type="text" id="all_foreigntravel" name="rm_foreigntravel" value="{{$rca->rm_foreigntravel}}">
+                                            </td>
+                                            @else
+                                            <td><input class="form-control" type="text" id="all_foreigntravel" name="rm_foreigntravel" value="{{$rca->am_foreigntravel}}">
+                                            </td>
+                                            @endif
+                                        </tr>
                                     </table>
                                     @endif
 
@@ -1110,13 +1228,6 @@
                                             <td>{{$rca->am_monthlyincome_spouse_child}}</td>
                                             <td>{{$rca->rm_monthlyincome_spouse_child}}</td>
                                         </tr>
-                                        {{-- <tr>
-                                            <td>Income from other family</td>
-                                            <td>{{$rca->monthlyincome_other}}</td>
-                                        <td>{{$rca->bm_monthlyincome_other}}</td>
-                                        <td>{{$rca->am_monthlyincome_other}}</td>
-                                        <td>{{$rca->rm_monthlyincome_other}}</td>
-                                        </tr> --}}
                                         <tr>
                                             <th colspan="8" class="bgColor">@lang('loanApproval.title2')</th>
                                         </tr>
@@ -1158,27 +1269,6 @@
                                             <td>{{$rca->am_medical}}</td>
                                             <td>{{$rca->rm_medical}}</td>
                                         </tr>
-                                        {{-- <tr>
-                                            <td>@lang('loanApproval.label23')</td>
-                                            <td>{{$rca->festive}}</td>
-                                        <td>{{$rca->bm_festive}}</td>
-                                        <td>{{$rca->am_festive}}</td>
-                                        <td>{{$rca->rm_festive}}</td>
-                                        </tr> --}}
-                                        {{-- <tr>
-                                            <td>@lang('loanApproval.label24')</td>
-                                            <td>{{$rca->utility}}</td>
-                                        <td>{{$rca->bm_utility}}</td>
-                                        <td>{{$rca->am_utility}}</td>
-                                        <td>{{$rca->rm_utility}}</td>
-                                        </tr> --}}
-                                        {{-- <tr>
-                                            <td>Saving in other MFI/Bank/Brac</td>
-                                            <td>{{$rca->saving}}</td>
-                                        <td>{{$rca->bm_saving}}</td>
-                                        <td>{{$rca->am_saving}}</td>
-                                        <td>{{$rca->rm_saving}}</td>
-                                        </tr> --}}
                                         <tr>
                                             <td>@lang('loanApproval.label25')</td>
                                             <td>{{$rca->other}}</td>
@@ -1258,6 +1348,81 @@
                                                 {{ $rmTolerance }}
                                                 @endif
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="7" class="bgColor">@lang('loanApproval.title9')</th>
+                                        </tr>
+                                        <tr class="text_align">
+                                            <td rowspan="4"></td>
+                                            <td>@lang('loanApproval.label12')</td>
+                                            <td rowspan="4"></td>
+                                            <td>@lang('loanApproval.label13')</td>
+                                            <td>@lang('loanApproval.label14')</td>
+                                            <td>@lang('loanApproval.label15')</td>
+                                            <td>@lang('loanApproval.label72')</td>
+                                            <td rowspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label73')</td>
+                                            <td>{{$rca->po_seasonal_income}}</td>
+                                            <td>{{$rca->bm_seasonal_income}}</td>
+                                            <td>{{$rca->am_seasonal_income}}</td>
+                                            <td>{{$rca->rm_seasonal_income}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label74')</td>
+                                            <td>{{$rca->po_incomeformfixedassets}}</td>
+                                            <td>{{$rca->bm_iancomeformfixedassets}}</td>
+                                            <td>{{$rca->am_iancomeformfixedassets}}</td>
+                                            <td>{{$rca->rm_iancomeformfixedassets}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label75')</td>
+                                            <td>{{$rca->po_imcomeformsavings}}</td>
+                                            <td>{{$rca->bm_imcomeformsavings}}</td>
+                                            <td>{{$rca->am_imcomeformsavings}}</td>
+                                            <td>{{$rca->rm_imcomeformsavings}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="7" class="bgColor">@lang('loanApproval.title10')</th>
+                                        </tr>
+                                        <tr class="text_align">
+                                            <td rowspan="5"></td>
+                                            <td>@lang('loanApproval.label18')</td>
+                                            <td rowspan="5"></td>
+                                            <td>@lang('loanApproval.label13')</td>
+                                            <td>@lang('loanApproval.label14')</td>
+                                            <td>@lang('loanApproval.label15')</td>
+                                            <td>@lang('loanApproval.label72')</td>
+                                            <td rowspan="5"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label76')</td>
+                                            <td>{{$rca->po_houseconstructioncost}}</td>
+                                            <td>{{$rca->bm_houseconstructioncost}}</td>
+                                            <td>{{$rca->am_houseconstructioncost}}</td>
+                                            <td>{{$rca->rm_houseconstructioncost}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label77')</td>
+                                            <td>{{$rca->po_expendingonmarriage}}</td>
+                                            <td>{{$rca->bm_expendingonmarriage}}</td>
+                                            <td>{{$rca->am_expendingonmarriage}}</td>
+                                            <td>{{$rca->rm_expendingonmarriage}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label78')</td>
+                                            <td>{{$rca->po_operation_childBirth}}</td>
+                                            <td>{{$rca->bm_operation_childBirth}}</td>
+                                            <td>{{$rca->am_operation_childBirth}}</td>
+                                            <td>{{$rca->rm_operation_childBirth}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label79')</td>
+                                            <td>{{$rca->po_foreigntravel}}</td>
+                                            <td>{{$rca->bm_foreigntravel}}</td>
+                                            <td>{{$rca->am_foreigntravel}}</td>
+                                            <td>{{$rca->rm_foreigntravel}}</td>
                                         </tr>
 
                                     </table>
@@ -2210,6 +2375,13 @@
                         <input type="hidden" value="" name="all_debt1" id="all_debt1">
                         <input type="hidden" value="" name="all_monthly_cash1" id="all_monthly_cash1">
                         <input type="hidden" value="" name="all_instal_proposloan1" id="all_instal_proposloan1">
+                        <input type="hidden" value="" name="all_seasonal_income1" id="all_seasonal_income1">
+                        <input type="hidden" value="" name="all_incomeformfixedassets1" id="all_incomeformfixedassets1">
+                        <input type="hidden" value="" name="all_imcomeformsavings1" id="all_imcomeformsavings1">
+                        <input type="hidden" value="" name="all_houseconstructioncost1" id="all_houseconstructioncost1">
+                        <input type="hidden" value="" name="all_expendingonmarriage1" id="all_expendingonmarriage1">
+                        <input type="hidden" value="" name="all_operation_childBirth1" id="all_operation_childBirth1">
+                        <input type="hidden" value="" name="all_foreigntravel1" id="all_foreigntravel1">
                     </div>
                 </div><!-- /.box-body -->
                 <div class="form-footer">
@@ -2324,6 +2496,20 @@
             $("#all_monthly_cash1").val(all_monthly_cash);
             let all_instal_proposloan = $('#all_instal_proposloan').val();
             $("#all_instal_proposloan1").val(all_instal_proposloan);
+            let all_seasonal_income = $('#all_seasonal_income').val();
+            $("#all_seasonal_income1").val(all_seasonal_income);
+            let all_incomeformfixedassets = $('#all_incomeformfixedassets').val();
+            $("#all_incomeformfixedassets1").val(all_incomeformfixedassets);
+            let all_imcomeformsavings = $('#all_imcomeformsavings').val();
+            $("#all_imcomeformsavings1").val(all_imcomeformsavings);
+            let all_houseconstructioncost = $('#all_houseconstructioncost').val();
+            $("#all_houseconstructioncost1").val(all_houseconstructioncost);
+            let all_expendingonmarriage = $('#all_expendingonmarriage').val();
+            $("#all_expendingonmarriage1").val(all_expendingonmarriage);
+            let all_operation_childBirth = $('#all_operation_childBirth').val();
+            $("#all_operation_childBirth1").val(all_operation_childBirth);
+            let all_foreigntravel = $('#all_foreigntravel').val();
+            $("#all_foreigntravel1").val(all_foreigntravel);
         })
         $('#recommend').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
@@ -2356,49 +2542,64 @@
             $("#all_monthly_cash1").val(all_monthly_cash);
             let all_instal_proposloan = $('#all_instal_proposloan').val();
             $("#all_instal_proposloan1").val(all_instal_proposloan);
+            let all_seasonal_income = $('#all_seasonal_income').val();
+            $("#all_seasonal_income1").val(all_seasonal_income);
+            let all_incomeformfixedassets = $('#all_incomeformfixedassets').val();
+            $("#all_incomeformfixedassets1").val(all_incomeformfixedassets);
+            let all_imcomeformsavings = $('#all_imcomeformsavings').val();
+            $("#all_imcomeformsavings1").val(all_imcomeformsavings);
+            let all_houseconstructioncost = $('#all_houseconstructioncost').val();
+            $("#all_houseconstructioncost1").val(all_houseconstructioncost);
+            let all_expendingonmarriage = $('#all_expendingonmarriage').val();
+            $("#all_expendingonmarriage1").val(all_expendingonmarriage);
+            let all_operation_childBirth = $('#all_operation_childBirth').val();
+            $("#all_operation_childBirth1").val(all_operation_childBirth);
+            let all_foreigntravel = $('#all_foreigntravel').val();
+            $("#all_foreigntravel1").val(all_foreigntravel);
         })
-        $('.close').on('click', function() {
-            document.querySelector('#reject_modal').style.display = 'none';
-        })
+    })
+    $('.close').on('click', function() {
+        document.querySelector('#reject_modal').style.display = 'none';
+    })
 
-        $('#lastCloseLoan').on('click', function() {
-            document.querySelector('#closeLoanModal').style.display = 'block';
-            var memId = $('#erpMemId').val();
-            $.ajax({
-                url: "{{url('operation/closeLoan')}}",
-                type: 'Get',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    memId: memId
-                },
-                success: function(data) {
-                    console.log(data);
+    $('#lastCloseLoan').on('click', function() {
+        document.querySelector('#closeLoanModal').style.display = 'block';
+        var memId = $('#erpMemId').val();
+        $.ajax({
+            url: "{{url('operation/closeLoan')}}",
+            type: 'Get',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                memId: memId
+            },
+            success: function(data) {
+                console.log(data);
 
-                    $("#closeLoanTable").empty();
+                $("#closeLoanTable").empty();
 
-                    if (data['message'] == "No data found") {
-                        $("#closeLoanTable").append(`<tr id="table_row">
+                if (data['message'] == "No data found") {
+                    $("#closeLoanTable").append(`<tr id="table_row">
                                         <td colspan="4"> <p style="text-align:center;">Data not found</p></td
                                         </tr>`)
-                    } else {
-                        var closeLoanData = data['data'][0];
+                } else {
+                    var closeLoanData = data['data'][0];
 
 
-                        $("#loanNo").append(closeLoanData['LoanNo']);
-                        $("#installmentAmount").append(closeLoanData['InstallmentAmount']);
-                        $("#disburseDate").append(closeLoanData['DisburseDate']);
-                        $("#disbursedAmount").append(closeLoanData['DisbursedAmount']);
-                        $.each(closeLoanData['Collections'], function(key, value) {
-                            if (value.CollectionMethod == 1) {
-                                var colMethod = "Cash";
-                            } else if (value.CollectionMethod == 5) {
-                                var colMethod = "bKash";
-                            } else if (value.CollectionMethod == 6) {
-                                var colMethod = "Bank";
-                            } else if (value.CollectionMethod == 3) {
-                                var colMethod = "Journal";
-                            }
-                            $("#closeLoanTable").append(`<tr>
+                    $("#loanNo").append(closeLoanData['LoanNo']);
+                    $("#installmentAmount").append(closeLoanData['InstallmentAmount']);
+                    $("#disburseDate").append(closeLoanData['DisburseDate']);
+                    $("#disbursedAmount").append(closeLoanData['DisbursedAmount']);
+                    $.each(closeLoanData['Collections'], function(key, value) {
+                        if (value.CollectionMethod == 1) {
+                            var colMethod = "Cash";
+                        } else if (value.CollectionMethod == 5) {
+                            var colMethod = "bKash";
+                        } else if (value.CollectionMethod == 6) {
+                            var colMethod = "Bank";
+                        } else if (value.CollectionMethod == 3) {
+                            var colMethod = "Journal";
+                        }
+                        $("#closeLoanTable").append(`<tr>
                             <td>
                                 ` + value.CollectionAmount + `
                             </td>
@@ -2410,15 +2611,15 @@
                             </td>                               
                         </tr>`)
 
-                        });
-                    }
-
+                    });
                 }
-            });
+
+            }
         });
-        $('.close').on('click', function() {
-            document.querySelector('#closeLoanModal').style.display = 'none';
-        })
+    });
+    $('.close').on('click', function() {
+    document.querySelector('#closeLoanModal').style.display = 'none';
+    })
 
     });
 </script>

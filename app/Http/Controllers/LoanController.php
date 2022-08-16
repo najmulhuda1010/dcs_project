@@ -2917,7 +2917,14 @@ class LoanController extends Controller
                 'am_other' => $request->all_other1,
                 'am_debt' => $request->all_debt1,
                 'am_monthly_cash' => $request->all_monthly_cash1,
-                'am_instal_proposloan' => $request->all_instal_proposloan1
+                'am_instal_proposloan' => $request->all_instal_proposloan1,
+                'am_seasonal_income' => $request->all_seasonal_income1,
+                'am_incomeformfixedassets' => $request->all_incomeformfixedassets1,
+                'am_imcomeformsavings' => $request->all_imcomeformsavings1,
+                'am_houseconstructioncost' => $request->all_houseconstructioncost1,
+                'am_expendingonmarriage' => $request->all_expendingonmarriage1,
+                'am_operation_childBirth' => $request->all_operation_childBirth1,
+                'am_foreigntravel' => $request->all_foreigntravel1,
             );
             DB::table($db . '.rca')->where('loan_id', $request->id)->update($am_assessment);
         }
@@ -2937,7 +2944,14 @@ class LoanController extends Controller
                 'rm_other' => $request->all_other1,
                 'rm_debt' => $request->all_debt1,
                 'rm_monthly_cash' => $request->all_monthly_cash1,
-                'rm_instal_proposloan' => $request->all_instal_proposloan1
+                'rm_instal_proposloan' => $request->all_instal_proposloan1,
+                'rm_seasonal_income' => $request->all_seasonal_income1,
+                'rm_incomeformfixedassets' => $request->all_incomeformfixedassets1,
+                'rm_imcomeformsavings' => $request->all_imcomeformsavings1,
+                'rm_houseconstructioncost' => $request->all_houseconstructioncost1,
+                'rm_expendingonmarriage' => $request->all_expendingonmarriage1,
+                'rm_operation_childBirth' => $request->all_operation_childBirth1,
+                'rm_foreigntravel' => $request->all_foreigntravel1,
             );
             DB::table($db . '.rca')->where('loan_id', $request->id)->update($rm_assessment);
         }
@@ -2947,7 +2961,7 @@ class LoanController extends Controller
     {
         $db = config('database.db');
 
-        $this->assessmentInsertion($request);
+        $this->assesesmentInsertion($request);
 
         $role = session('roll');
         $db1 = DB::table($db . '.loans')

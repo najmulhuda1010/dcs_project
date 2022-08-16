@@ -8,6 +8,8 @@ return [
     'title6' => 'CSI Information',
     'title7' => 'Residence Information',
     'title8' => 'Checklist (Only For Loan Proposal)',
+    'title9' => 'Future Income',
+    'title10' => 'Future Expense',
 
     'label1' => 'Loan Product',
     'label2' => 'Investment Sector',
@@ -81,6 +83,13 @@ return [
     'label70' => 'Picture of client House',
     'label71' => 'Loan Duration (Months)',
     'label72' => 'RM Assessment',
+    'label73' => 'Seasonal Income',
+    'label74' => 'Income from fixed assets',
+    'label75' => 'Income from Savings',
+    'label76' => 'House construction cost',
+    'label77' => 'Expenditure on marriage of any family members',
+    'label78' => 'Operation/Child birth/accident expense',
+    'label79' => 'Possible foreign travel or higher education expense',
 
     'header1' =>    'Applicant`s Picture',
     'header2' =>    'Applicant`s Name',
