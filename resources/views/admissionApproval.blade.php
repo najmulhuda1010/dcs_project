@@ -112,7 +112,6 @@
         text-decoration: none;
         cursor: pointer;
     }
-
 </style>
 @endsection
 
@@ -173,8 +172,8 @@
                                 $getproject = DB::table('dcs.projects')->where('projectTitle', session('project'))->get();
                                 if ($getproject->isEmpty()) {
                                     $projectsName = '';
-                                } else {                                  
-                                    $projectsName = $getproject[0]->bangla;                                    
+                                } else {
+                                    $projectsName = $getproject[0]->bangla;
                                 }
                             } else {
                                 $projectsName = session('project');
@@ -193,41 +192,35 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <p>@lang('loanApproval.header1') :</p>
-                                                @if($data->ApplicantCpmbinedImg==null)
-                                                <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle"
-                                                    alt="Applicant image">
+                                                @if($data->ApplicantSinglePic==null)
+                                                <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle" alt="Applicant image">
                                                 @else
-                                                <img src="{{ $data->ApplicantCpmbinedImg }}" class="img-circle"
-                                                    alt="Applicant image">
+                                                <img src="{{ $data->ApplicantSinglePic }}" class="img-circle" alt="Applicant --image">
                                                 @endif
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header8') : <a
-                                                                href="{{ $data->FrontSideOfIdImg }}">image</a>
+                                                        <p>@lang('loanApproval.header8') : <a href="{{ $data->FrontSideOfIdImg }}">image</a>
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header9') : <a
-                                                                href="{{ $data->SpouseNidFront }}">image</a></p>
+                                                        <p>@lang('loanApproval.header9') : <a href="{{ $data->SpouseNidFront }}">image</a></p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header10') : <a
-                                                                href="{{ $data->BackSideOfIdimg }}">image</a>
+                                                        <p>@lang('loanApproval.header10') : <a href="{{ $data->BackSideOfIdimg }}">image</a>
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header11') : <a
-                                                                href="{{ $data->SpouseNidBack }}">image</a></p>
+                                                        <p>@lang('loanApproval.header11') : <a href="{{ $data->SpouseNidBack }}">image</a></p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <p>
-                                                            <h4>@lang('admissionApproval.header1')</h4>
+                                                        <h4>@lang('admissionApproval.header1')</h4>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -262,21 +255,18 @@
                                                         @if(session('projectcode')=='060' and
                                                         session('role_designation') == 'AM')
                                                         <div class="star_rating">
-                                                            <input type="hidden" value="{{$data->bm_financial_status}}"
-                                                                id="bm_financial_status">
+                                                            <input type="hidden" value="{{$data->bm_financial_status}}" id="bm_financial_status">
                                                             <i class="fa fa-star" aria-hidden="true" id="st1"></i>
                                                             <i class="fa fa-star" aria-hidden="true" id="st2"></i>
                                                             <i class="fa fa-star" aria-hidden="true" id="st3"></i>
                                                             <i class="fa fa-star" aria-hidden="true" id="st4"></i>
                                                             <i class="fa fa-star" aria-hidden="true" id="st5"></i>
-                                                            <input type="hidden" value="0" name="all_financial_status"
-                                                                class="all_financial_status">
+                                                            <input type="hidden" value="0" name="all_financial_status" class="all_financial_status">
                                                         </div>
                                                         @else
                                                         <div class="star_rating">
                                                             @lang('admissionApproval.header3') :
-                                                            <input type="hidden" value="{{$data->bm_financial_status}}"
-                                                                id="bm_financial_status">
+                                                            <input type="hidden" value="{{$data->bm_financial_status}}" id="bm_financial_status">
                                                             <i class="fa fa-star" aria-hidden="true" id="st1"></i>
                                                             <i class="fa fa-star" aria-hidden="true" id="st2"></i>
                                                             <i class="fa fa-star" aria-hidden="true" id="st3"></i>
@@ -309,11 +299,12 @@
                                 <div class="card card-custom header-section">
                                     <div class="card-body">
                                         <p>
-                                            <h4>@lang('admissionApproval.header4')</h4>
+                                        <h4>@lang('admissionApproval.header4')</h4>
                                         </p>
                                         <p>@lang('admissionApproval.header5') : {{ $data->IsRefferal }}</p>
                                         <p>@lang('admissionApproval.header6') : {{ $data->RefferedById }}
-                                            {{ $data->ReffererName }}</p>
+                                            {{ $data->ReffererName }}
+                                        </p>
                                         <p>@lang('admissionApproval.header7') : {{ $data->ReffererPhone }}</p>
                                     </div>
                                 </div>
@@ -327,13 +318,11 @@
                             <div class="nav_bar">
                                 <ul class="nav  nav-pills nav-fill">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="client1"
-                                            href="#clientInfo">@lang('admission.approval_tab1')</a>
+                                        <a class="nav-link active" id="client1" href="#clientInfo">@lang('admission.approval_tab1')</a>
                                     </li>
                                     @if($data2!=null)
                                     <li class="nav-item">
-                                        <a class="nav-link" id="more1"
-                                            href="#moreInfo">@lang('admission.approval_tab2')</a>
+                                        <a class="nav-link" id="more1" href="#moreInfo">@lang('admission.approval_tab2')</a>
                                     </li>
                                     @endif
 
@@ -358,6 +347,18 @@
                                             <td rowspan="32"></td>
                                         </tr>
                                         <tr>
+                                            <td>@lang('admissionApproval.label32')</td>
+                                            <td colspan="2">
+                                                @if($data->MemberCateogryId!= null)
+                                                @php
+                                                $membercategory=DB::table($db.'.product_project_member_category')->select('membercategory')->where('membercategoryid',$data->MemberCateogryId)->first();
+                                                @endphp
+                                                {{$membercategory->membercategory}}
+                                                @endif
+                                                <!-- {{$data->MainIdTypeId}} -->
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td>@lang('admissionApproval.label2')</td>
                                             <td colspan="2">
                                                 @if($data->MainIdTypeId!= null)
@@ -366,15 +367,14 @@
                                                 @endphp
                                                 {{$idType->data_name}}
                                                 @endif
-                                                <!-- {{$data->MainIdTypeId}} -->
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                                <td>ID NO.</td>
-                                                <td colspan="2">
-                                                    {{$data->IdNo}}
-                                                </td>
-                                            </tr> -->
+                                        <tr>
+                                            <td>@lang('admissionApproval.label33')</td>
+                                            <td colspan="2">
+                                                {{$data->IdNo}}
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label3')</td>
                                             <td colspan="2">
@@ -426,13 +426,15 @@
                                         <tr>
                                             <td>@lang('admissionApproval.label9') </td>
                                             <td colspan="2">
-                                                {{$data->presentUpazilaId}}, {{$data->PresentAddress}}
+                                                {{$data->PresentAddress}}
+                                                <!-- {{$data->presentUpazilaId}}, {{$data->PresentAddress}} -->
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label10')</td>
                                             <td colspan="2">
-                                                {{$data->parmanentUpazilaId}}, {{$data->PermanentAddress }}
+                                                {{$data->PermanentAddress }}
+                                                <!-- {{$data->parmanentUpazilaId}}, {{$data->PermanentAddress }} -->
                                             </td>
                                         </tr>
                                         <tr>
@@ -484,11 +486,33 @@
                                                 {{$data->NoOfChildren}}
                                             </td>
                                         </tr>
-
                                         <tr>
                                             <td>@lang('admissionApproval.label16')</td>
                                             <td colspan="2">
                                                 {{$data->NomineeName}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('admissionApproval.label34')</td>
+                                            <td colspan="2">
+                                                {{$data->NomineePhoneNumber}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('admissionApproval.label35')</td>
+                                            <td colspan="2">
+                                                @if($data->NomineeNidType!= null)
+                                                @php
+                                                $NomineeNidType=DB::table($db.'.payload_data')->select('data_name')->where('data_type','cardTypeId')->where('data_id',$data->NomineeNidType)->first();
+                                                @endphp
+                                                {{$NomineeNidType->data_name}}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('admissionApproval.label36')</td>
+                                            <td colspan="2">
+                                                {{$data->NomineeNidNo}}
                                             </td>
                                         </tr>
                                         <tr>
@@ -536,66 +560,30 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                                <td>Refferer Name</td>
-                                                <td colspan="2">
-                                                    {{$data->ReffererName}}
-                                                </td>
-                                            </tr> -->
-                                        <!-- <tr>
-                                                <td>Refferer Phone</td>
-                                                <td colspan="2">
-                                                    {{$data->ReffererPhone}}
-                                                </td>
-                                            </tr> -->
                                         <tr>
                                             <td>@lang('admissionApproval.label22')</td>
                                             <td colspan="2">
-                                                @if($data->ReffererIdImg)
-                                                <img class="guarantor_img " src="{{$data->ReffererIdImg}}"
-                                                    alt="Refferer Picture">
+                                                @if($data->ApplicantCpmbinedImg)
+                                                <img class="guarantor_img " src="{{$data->ApplicantCpmbinedImg}}" alt="Combine Picture">
                                                 @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label23')</td>
                                             <td colspan="2">
-                                                @if($data->ApplicantCpmbinedImg)
-                                                <img class="guarantor_img " src="{{$data->ApplicantCpmbinedImg}}"
-                                                    alt="Combine Picture">
+                                                @if($data->NomineeNidFront)
+                                                <img class="nid_img  " src="{{$data->NomineeNidFront}}" alt="Nominee's Images">
                                                 @endif
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                                <td>NID/Others ID Front</td>
-                                                <td colspan="2">
-                                                    <img class="nid_img" src="{{$data->FrontSideOfIdImg}}"
-                                                        alt="NID/Others ID Front">
-                                                </td>
-                                            </tr> -->
-                                        <!-- <tr>
-                                                <td>NID/Others ID Back</td>
-                                                <td colspan="2">
-                                                    <img class="nid_img" src="{{$data->BackSideOfIdimg}}"
-                                                        alt="NID/Others ID Back">
-                                                </td>
-                                            </tr> -->
                                         <tr>
                                             <td>@lang('admissionApproval.label24')</td>
                                             <td colspan="2">
-                                                @if($data->NomineeIdImg)
-                                                <img class="guarantor_img " src="{{$data->NomineeIdImg}}"
-                                                    alt="Nominee's Images">
+                                                @if($data->NomineeNidBack)
+                                                <img class="nid_img  " src="{{$data->NomineeNidBack}}" alt="Nominee's Images">
                                                 @endif
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                                <td>Spouse's Image</td>
-                                                <td colspan="2">
-                                                    <img class="guarantor_img " src="{{$data->SpuseIdImg}}"
-                                                        alt="Spouse's Image">
-                                                </td>
-                                            </tr> -->
                                     </table>
                                     <div class="box-footer">
                                         <div class="row">
@@ -607,8 +595,7 @@
 
                                             </div>
                                             <div class="col-md-4">
-                                                <a href="#moreInfo" id="more2" data-toggle="tab"
-                                                    class="btn btn-secondary float-right">@lang('actionBtn.next')</a>
+                                                <a href="#moreInfo" id="more2" data-toggle="tab" class="btn btn-secondary float-right">@lang('actionBtn.next')</a>
                                             </div>
                                             @else
 
@@ -622,16 +609,13 @@
                                             @if($authorization == true and $data->status=='1' and
                                             $data->reciverrole==session('roll'))
                                             <div class="col-md-4">
-                                                <a class="btn btn-danger btn-block" id="reject"
-                                                    href="#">@lang('actionBtn.rejectbtn')</a>
+                                                <a class="btn btn-danger btn-block" id="reject" href="#">@lang('actionBtn.rejectbtn')</a>
                                             </div>
                                             <div class="col-md-4">
-                                                <a class="btn btn-primary btn-block" id="sendback"
-                                                    href="#">@lang('actionBtn.sendBack')</a>
+                                                <a class="btn btn-primary btn-block" id="sendback" href="#">@lang('actionBtn.sendBack')</a>
                                             </div>
                                             <div class="col-md-4">
-                                                <button type="submit" id="approve"
-                                                    class="btn btn-success btn-block">@lang('actionBtn.approve')</button>
+                                                <button type="submit" id="approve" class="btn btn-success btn-block">@lang('actionBtn.approve')</button>
                                             </div>
                                             @endif
                                             @endif
@@ -676,8 +660,7 @@
                                                     Back</a>
                                             </div>
                                             <div class="col-md-4">
-                                                <button type="submit" id="approve"
-                                                    class="btn btn-success btn-block">Approve</button>
+                                                <button type="submit" id="approve" class="btn btn-success btn-block">Approve</button>
                                             </div>
                                         </div>
                                     </div>
@@ -725,15 +708,13 @@
                                             session('role_designation') == 'AM')
                                             <td class="" colspan="2">
                                                 <div class="star_rating">
-                                                    <input type="hidden" value="{{$data->bm_financial_status}}"
-                                                        id="bm_financial_status">
+                                                    <input type="hidden" value="{{$data->bm_financial_status}}" id="bm_financial_status">
                                                     <i class="fa fa-star" aria-hidden="true" id="st1"></i>
                                                     <i class="fa fa-star" aria-hidden="true" id="st2"></i>
                                                     <i class="fa fa-star" aria-hidden="true" id="st3"></i>
                                                     <i class="fa fa-star" aria-hidden="true" id="st4"></i>
                                                     <i class="fa fa-star" aria-hidden="true" id="st5"></i>
-                                                    <input type="hidden" value="0" name="all_financial_status"
-                                                        class="all_financial_status">
+                                                    <input type="hidden" value="0" name="all_financial_status" class="all_financial_status">
                                                 </div>
                                             </td>
                                             @endif
@@ -750,8 +731,7 @@
                                             <td>Picture of Client House</td>
                                             <td colspan="2" class="">
                                                 @if($data->bm_client_house_image)
-                                                <img class="nid_img" src="{{$data->bm_client_house_image}}"
-                                                    alt="client house">
+                                                <img class="nid_img" src="{{$data->bm_client_house_image}}" alt="client house">
                                                 @endif
                                             </td>
                                         </tr>
@@ -812,13 +792,13 @@
 @section('script')
 
 <script>
-    $(document).ready(function () {
-        $('#more2').on('click', function () {
+    $(document).ready(function() {
+        $('#more2').on('click', function() {
             $("li .active").removeClass("active");
             $('#more1').addClass('active');
         });
 
-        $('#social2').on('click', function () {
+        $('#social2').on('click', function() {
             $("li .active").removeClass("active");
             $('#social1').addClass('active');
         });
@@ -880,7 +860,7 @@
         //     $(".all_financial_status").val("0");
         //   }
 
-        $('#reject').on('click', function () {
+        $('#reject').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
             $("#action").append(`<input type="hidden" value="Reject" name="action">`);
             $("#action").append(`<input type="hidden" value="Sendback" name="action">`);
@@ -888,19 +868,18 @@
             $("#all_behavior").val(behavior);
         })
 
-        $('#sendback').on('click', function () {
+        $('#sendback').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
             $("#action").append(`<input type="hidden" value="Sendback" name="action">`);
             let behavior = $('#behavior').val();
             $("#all_behavior").val(behavior);
         })
 
-        $('.close').on('click', function () {
+        $('.close').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'none';
         })
 
     });
-
 </script>
 
 @endsection

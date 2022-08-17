@@ -10,7 +10,7 @@
     .img-circle {
         border-radius: 50%;
         height: 150px;
-        width: auto;
+        width: 150px;
     }
 
     .modal {
@@ -202,10 +202,10 @@
                                             <div class="col-md-4">
                                                 <p>@lang('loanApproval.header1') :</p>
                                                 @if(!empty($admissionData))
-                                                @if($admissionData->ApplicantCpmbinedImg==null)
+                                                @if($admissionData->ApplicantSinglePic==null)
                                                 <img src="{{ asset('images/Sample_User_Icon.png') }}" class="img-circle" alt="Applicant image">
                                                 @else
-                                                <img src="{{ $admissionData->ApplicantCpmbinedImg }}" class="img-circle" alt="Applicant image">
+                                                <img src="{{ $admissionData->ApplicantSinglePic }}" class="img-circle" alt="Applicant image">
                                                 @endif
                                                 @else
                                                 @if($admissionApi->MemberImageUrl==null)
@@ -421,26 +421,37 @@
                                         </tr>
                                         <tr>
                                             <td rowspan="12"></td>
-                                            <td>@lang('loanApproval.label1')</td>
+                                            <td>@lang('loanApproval.label4')</td>
                                             <td rowspan="12"></td>
                                             <td colspan="2">
-                                                @if($data->loan_product!= null)
-                                                @php
-                                                if(session('projectcode') == '015')
-                                                {
-                                                $projectcode = "15";
-                                                }
-                                                elseif(session('projectcode') == '015')
-                                                {
-                                                $projectcode = "60";
-                                                }
-                                                $loan_product=DB::table($db.'.product_project_member_category')->select('productname')->where('productid',$data->loan_product)->where('projectcode',$projectcode)->first();
-
-                                                @endphp
-                                                {{$loan_product->productname}}
-                                                @endif
+                                                {{$data->propos_amt}}
                                             </td>
                                             <td rowspan="12"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label5')</td>
+                                            <td colspan="2">
+                                                {{$data->amount_inword}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label6')</td>
+                                            <td colspan="2">
+                                                {{$data->loan_purpose}}
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>@lang('loanApproval.label7')</td>
+                                            <td colspan="2">
+                                                {{$data->loan_user}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@lang('loanApproval.label8')</td>
+                                            <td colspan="2">
+                                                {{$data->loan_type}}
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('loanApproval.label71')</td>
@@ -468,33 +479,27 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>@lang('loanApproval.label4')</td>
-                                            <td colspan="2">{{$data->propos_amt}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>@lang('loanApproval.label5')</td>
+                                            <td>@lang('loanApproval.label1')</td>
                                             <td colspan="2">
-                                                {{$data->amount_inword}}
+                                                @if($data->loan_product!= null)
+                                                @php
+                                                if(session('projectcode') == '015')
+                                                {
+                                                $projectcode = "15";
+                                                }
+                                                elseif(session('projectcode') == '015')
+                                                {
+                                                $projectcode = "60";
+                                                }
+                                                $loan_product=DB::table($db.'.product_project_member_category')->select('productname')->where('productid',$data->loan_product)->where('projectcode',$projectcode)->first();
+
+                                                @endphp
+                                                {{$loan_product->productname}}
+                                                @endif
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>@lang('loanApproval.label6')</td>
-                                            <td colspan="2">
-                                                {{$data->loan_purpose}}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>@lang('loanApproval.label7')</td>
-                                            <td colspan="2">
-                                                {{$data->loan_user}}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>@lang('loanApproval.label8')</td>
-                                            <td colspan="2">
-                                                {{$data->loan_type}}
-                                            </td>
-                                        </tr>
+
+
                                         <tr>
                                             <td>@lang('loanApproval.label9')</td>
                                             <td colspan="2">
@@ -1896,24 +1901,24 @@
                                         <tr>
                                             <td>@lang('admissionApproval.label22')</td>
                                             <td colspan="2">
-                                                @if($admissionData->ReffererIdImg)
-                                                <img class="guarantor_img " src="{{$admissionData->ReffererIdImg}}" alt="Refferer Picture">
+                                                @if($admissionData->ApplicantCpmbinedImg)
+                                                <img class="nid_img " src="{{$admissionData->ApplicantCpmbinedImg}}" alt="Combine Picture">
                                                 @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label23')</td>
                                             <td colspan="2">
-                                                @if($admissionData->ApplicantCpmbinedImg)
-                                                <img class="guarantor_img " src="{{$admissionData->ApplicantCpmbinedImg}}" alt="Combine Picture">
+                                                @if($admissionData->NomineeNidFront)
+                                                <img class="nid_img " src="{{$admissionData->NomineeNidFront}}" alt="Nominee's Images">
                                                 @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>@lang('admissionApproval.label24')</td>
                                             <td colspan="2">
-                                                @if($admissionData->NomineeIdImg)
-                                                <img class="guarantor_img " src="{{$admissionData->NomineeIdImg}}" alt="Nominee's Images">
+                                                @if($admissionData->NomineeNidBack)
+                                                <img class="nid_img " src="{{$admissionData->NomineeNidBack}}" alt="Nominee's Images">
                                                 @endif
                                             </td>
                                         </tr>
@@ -2295,7 +2300,7 @@
                                             <td>@lang('loanApproval.label70')</td>
                                             <td colspan="2">
                                                 @if($data->bm_clienthouse)
-                                                <img src="{{$data->bm_clienthouse}}" alt="house">
+                                                <img src="{{$data->bm_clienthouse}}" class="nid_img" alt="house">
                                                 @endif
                                             </td>
                                         </tr>
