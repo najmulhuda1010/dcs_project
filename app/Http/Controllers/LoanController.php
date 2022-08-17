@@ -234,7 +234,7 @@ class LoanController extends Controller
                 ->whereIn($db . '.loans.branchcode', $division_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -421,7 +421,7 @@ class LoanController extends Controller
                 ->whereIn($db . '.loans.branchcode', $region_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -608,7 +608,7 @@ class LoanController extends Controller
                 ->whereIn($db . '.loans.branchcode', $area_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -796,7 +796,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.status', $status_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -984,7 +984,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.status', $status_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -1172,7 +1172,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.status', $status_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
             return datatables($datas)->addColumn('branchcode', function ($datas) {
                 $branch_name = '';
@@ -1360,7 +1360,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.status', $status_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -1549,7 +1549,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.branchcode', $branchcode_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -1747,7 +1747,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.status', $status_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
             // dd($datas);
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -1936,7 +1936,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.assignedpo', $po_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
             return datatables($datas)->addColumn('branchcode', function ($datas) {
                 $branch_name = '';
@@ -2124,7 +2124,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.assignedpo', $po_search)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
             return datatables($datas)->addColumn('branchcode', function ($datas) {
                 $branch_name = '';
@@ -2313,7 +2313,7 @@ class LoanController extends Controller
                 ->whereDate($db . '.loans.time', '<=', $dateTo)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
 
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -2497,7 +2497,7 @@ class LoanController extends Controller
                 ->whereIn($db . '.loans.assignedpo', $po)
                 ->where($db . '.loans.projectcode', session('projectcode'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 // ->whereDate($db.'.loans.time', Carbon::today())
                 ->get();
             return datatables($datas)->addColumn('branchcode', function ($datas) {
@@ -2688,8 +2688,7 @@ class LoanController extends Controller
                 ->where($db . '.loans.status', '1')
                 ->where($db . '.loans.reciverrole', session('roll'))
                 ->select($db . '.loans.*', $db . '.admissions.ApplicantsName', $db . '.admissions.MainIdTypeId')
-                ->leftJoin($db . '.admissions', $db . '.loans.mem_id', '=', $db . '.admissions.entollmentid')
-                // ->whereDate($db.'.loans.time', Carbon::today())
+                ->leftJoin($db . '.admissions', $db . '.loans.erp_mem_id', '=', $db . '.admissions.MemberId')
                 ->get();
             return datatables($datas)->addColumn('branchcode', function ($datas) {
                 $branch_name = '';
@@ -2882,7 +2881,7 @@ class LoanController extends Controller
         $data2 = json_decode($data->DynamicFieldValue);
         $rca = RcaTable::where(['loan_id' => $id])->first();
         $admissionApi = '';
-        $admissionData = Admission::select('*')->where(['entollmentid' => $data->mem_id])->first();
+        $admissionData = Admission::select('*')->where(['MemberId' => $data->erp_mem_id])->first();
         if ($admissionData == null) {
             $branchCode = $data->branchcode;
             $CONo = $data->assignedpo;
