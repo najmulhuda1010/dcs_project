@@ -2899,8 +2899,10 @@ class LoanController extends Controller
     public function assessmentInsertion($request)
     {
         $db = config('database.db');
+        //dd("Huda");
 
         if (session('role_designation') == 'AM' and $request->action != "Reject") {
+
             $am_assessment = array(
                 'am_primary_earner' => $request->all_primary_earner1,
                 'am_monthlyincome_main' => $request->all_monthlyincome_main1,
@@ -2923,7 +2925,7 @@ class LoanController extends Controller
                 'am_houseconstructioncost' => $request->all_houseconstructioncost1,
                 'am_expendingonmarriage' => $request->all_expendingonmarriage1,
                 'am_operation_childBirth' => $request->all_operation_childBirth1,
-                'am_foreigntravel' => $request->all_foreigntravel1,
+                'am_foreigntravel' => $request->all_foreigntravel1
             );
             DB::table($db . '.rca')->where('loan_id', $request->id)->update($am_assessment);
         }
@@ -2959,8 +2961,9 @@ class LoanController extends Controller
     public function action_btn(Request $request)
     {
         $db = config('database.db');
-
-        $this->assesesmentInsertion($request);
+        //dd("Test");
+        //$this->assesesmentInsertion($request);
+        $this->assessmentInsertion($request);
 
         $role = session('roll');
         $db1 = DB::table($db . '.loans')
@@ -3028,7 +3031,7 @@ class LoanController extends Controller
         }
 
         $document_url = "http://scm.brac.net/dcs/DocumentManager?doc_id=$doc_id&projectcode=$projectcode&doc_type=loan&pin=$pin&role=$role&branchcode=$branchcode&action=$action";
-        // dd($document_url);
+        //dd($document_url);
         Log::channel('daily')->info('Document_url : ' . $document_url);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $document_url);
@@ -3038,7 +3041,8 @@ class LoanController extends Controller
         curl_close($ch);
 
         $collectionfordocument = json_decode($documentoutput);
-        // dd($collectionfordocument);
+        //dd($collectionfordocument);
+        // $status = $collectionfordocument[0]
 
         if ($collectionfordocument != NULL) {
             if ($collectionfordocument->status == "E") {

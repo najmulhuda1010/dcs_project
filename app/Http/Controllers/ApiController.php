@@ -2600,6 +2600,8 @@ class ApiController extends Controller
 
               if ($checkApprove) {
                 Log::channel('daily')->info($reciverrole . ' Approve ' . $doc_type);
+                $result = array("status" => "S", "message" => 'Approve ' . $doc_type);
+                return json_encode($result);
               }
             }
 
@@ -3441,8 +3443,11 @@ class ApiController extends Controller
       'OrgMemNo' => $data->orgmemno,
       'key' => $key
     ]);
-    // dd($member);
+
     $member = $member->object();
+    //print_r($member);
+    //die;
+    // Log::info("Member Data- " . $member);
     if ($member != null) {
       if ($member->data != null) {
         $memberInfo = $member->data[0];
@@ -3504,19 +3509,20 @@ class ApiController extends Controller
     } elseif ($data->insurn_type == 2) {
       if ($data->insurn_option == 1) {
         $secondInsurer = array();
-        if ($memberInfo->Nominees != null) {
+        if ($memberInfo->SpouseIDCard != null) {
+          //dd($memberInfo->SpouseIDCard);
           $secondInsurer = array(
             "dateOfBirth" => null,
             "genderId" => null,
             "idCard" => array(),
             "idCard" => array(
               "backImageUrl" => null,
-              "cardTypeId" => $memberInfo->SpouseIDCard[0]->CardTypeId,
-              "expiryDate" => $memberInfo->SpouseIDCard[0]->CardTypeId,
+              "cardTypeId" => $memberInfo->SpouseIDCard->CardTypeId,
+              "expiryDate" => $memberInfo->SpouseIDCard->ExpiryDate,
               "frontImageUrl" => null,
-              "idCardNo" => '7654891255', //$memberInfo->SpouseIDCard[0]->CardTypeId,
+              "idCardNo" => $memberInfo->SpouseIDCard->IdCardNo,
               "issueDate" => null,
-              "issuePlace" => $memberInfo->SpouseIDCard[0]->CardTypeId,
+              "issuePlace" => $memberInfo->SpouseIDCard->IssuePlace,
             ),
             "name" => null,
             "relationshipId" => null,
