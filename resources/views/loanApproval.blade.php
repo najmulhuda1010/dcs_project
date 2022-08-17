@@ -228,21 +228,21 @@
                                                 <p>@lang('loanApproval.header7') : {{ $admissionData->SpouseName }}</p>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header8') : <a href="{{ $admissionData->FrontSideOfIdImg }}">image</a>
+                                                        <p>@lang('loanApproval.header8') : <a href="{{ $admissionData->FrontSideOfIdImg }}" target="blank">image</a>
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header9') : <a href="{{ $admissionData->SpouseNidFront }}">image</a>
+                                                        <p>@lang('loanApproval.header9') : <a href="{{ $admissionData->SpouseNidFront }}" target="blank">image</a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header10') : <a href="{{ $admissionData->BackSideOfIdimg }}">image</a>
+                                                        <p>@lang('loanApproval.header10') : <a href="{{ $admissionData->BackSideOfIdimg }}" target="blank">image</a>
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p>@lang('loanApproval.header11') : <a href="{{ $admissionData->SpouseNidBack }}">image</a></p>
+                                                        <p>@lang('loanApproval.header11') : <a href="{{ $admissionData->SpouseNidBack }}" target="blank">image</a></p>
                                                     </div>
                                                 </div>
                                                 @else
@@ -2510,7 +2510,7 @@
             $("#all_operation_childBirth1").val(all_operation_childBirth);
             let all_foreigntravel = $('#all_foreigntravel').val();
             $("#all_foreigntravel1").val(all_foreigntravel);
-        })
+        });
         $('#recommend').on('click', function() {
             document.querySelector('#reject_modal').style.display = 'block';
             $("#action").append(`<input type="hidden" value="Recommend" name="action">`);
@@ -2556,50 +2556,49 @@
             $("#all_operation_childBirth1").val(all_operation_childBirth);
             let all_foreigntravel = $('#all_foreigntravel').val();
             $("#all_foreigntravel1").val(all_foreigntravel);
+        });
+        $('.close').on('click', function() {
+            document.querySelector('#reject_modal').style.display = 'none';
         })
-    })
-    $('.close').on('click', function() {
-        document.querySelector('#reject_modal').style.display = 'none';
-    })
 
-    $('#lastCloseLoan').on('click', function() {
-        document.querySelector('#closeLoanModal').style.display = 'block';
-        var memId = $('#erpMemId').val();
-        $.ajax({
-            url: "{{url('operation/closeLoan')}}",
-            type: 'Get',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                memId: memId
-            },
-            success: function(data) {
-                console.log(data);
+        $('#lastCloseLoan').on('click', function() {
+            document.querySelector('#closeLoanModal').style.display = 'block';
+            var memId = $('#erpMemId').val();
+            $.ajax({
+                url: "{{url('operation/closeLoan')}}",
+                type: 'Get',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    memId: memId
+                },
+                success: function(data) {
+                    console.log(data);
 
-                $("#closeLoanTable").empty();
+                    $("#closeLoanTable").empty();
 
-                if (data['message'] == "No data found") {
-                    $("#closeLoanTable").append(`<tr id="table_row">
+                    if (data['message'] == "No data found") {
+                        $("#closeLoanTable").append(`<tr id="table_row">
                                         <td colspan="4"> <p style="text-align:center;">Data not found</p></td
                                         </tr>`)
-                } else {
-                    var closeLoanData = data['data'][0];
+                    } else {
+                        var closeLoanData = data['data'][0];
 
 
-                    $("#loanNo").append(closeLoanData['LoanNo']);
-                    $("#installmentAmount").append(closeLoanData['InstallmentAmount']);
-                    $("#disburseDate").append(closeLoanData['DisburseDate']);
-                    $("#disbursedAmount").append(closeLoanData['DisbursedAmount']);
-                    $.each(closeLoanData['Collections'], function(key, value) {
-                        if (value.CollectionMethod == 1) {
-                            var colMethod = "Cash";
-                        } else if (value.CollectionMethod == 5) {
-                            var colMethod = "bKash";
-                        } else if (value.CollectionMethod == 6) {
-                            var colMethod = "Bank";
-                        } else if (value.CollectionMethod == 3) {
-                            var colMethod = "Journal";
-                        }
-                        $("#closeLoanTable").append(`<tr>
+                        $("#loanNo").append(closeLoanData['LoanNo']);
+                        $("#installmentAmount").append(closeLoanData['InstallmentAmount']);
+                        $("#disburseDate").append(closeLoanData['DisburseDate']);
+                        $("#disbursedAmount").append(closeLoanData['DisbursedAmount']);
+                        $.each(closeLoanData['Collections'], function(key, value) {
+                            if (value.CollectionMethod == 1) {
+                                var colMethod = "Cash";
+                            } else if (value.CollectionMethod == 5) {
+                                var colMethod = "bKash";
+                            } else if (value.CollectionMethod == 6) {
+                                var colMethod = "Bank";
+                            } else if (value.CollectionMethod == 3) {
+                                var colMethod = "Journal";
+                            }
+                            $("#closeLoanTable").append(`<tr>
                             <td>
                                 ` + value.CollectionAmount + `
                             </td>
@@ -2611,15 +2610,15 @@
                             </td>                               
                         </tr>`)
 
-                    });
-                }
+                        });
+                    }
 
-            }
+                }
+            });
         });
-    });
-    $('.close').on('click', function() {
-    document.querySelector('#closeLoanModal').style.display = 'none';
-    })
+        $('.close').on('click', function() {
+            document.querySelector('#closeLoanModal').style.display = 'none';
+        })
 
     });
 </script>
