@@ -472,10 +472,12 @@
                                         <tr>
                                             <td>@lang('loanApproval.label3')</td>
                                             <td colspan="2">
+                                                @if($data->scheme!= null)
                                                 @php
-                                                $scheme=DB::table($db.'.schemem_sector_subsector')->select('productname')->where('schemeid',$data->scheme)->first();
+                                                $scheme=DB::table($db.'.schemem_sector_subsector')->select('schemename')->where('schemeid',$data->scheme)->first();
                                                 @endphp
-                                                {{$scheme->productname}}
+                                                {{$scheme->schemename}}
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>

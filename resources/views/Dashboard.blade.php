@@ -46,14 +46,14 @@
         color: rgb(9, 8, 8) !important;
     }
 
-    .roll_btn h4 {
-        /* text-decoration: underline; */
+    .roll_single_btn {
+        border: groove;
         transition: .5s;
         cursor: pointer;
     }
 
-    .roll_btn h4:hover {
-        color: #FB3199;
+    .roll_single_btn:hover {
+        background-color: #FB3199;
     }
 
     .roll_btn h4 span {
@@ -344,12 +344,12 @@
                                 <!-- </form> -->
                             </div>
                             <br>
-                            {{-- card************************* --}}
+                            <!-- -- card************************* ---->
                             <div class="card_section">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="card" style="width: 18rem;">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color:#90ee90;">
                                                 <h5 class="card-title">@lang('dashboard.card1')</h5>
                                                 <h5 class="text-center" id="totalAdmission">{{ $pending_admission->count }}</h5>
                                             </div>
@@ -357,15 +357,15 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="card" style="width: 18rem;">
-                                            <div class="card-body">
-                                                <h6 class="card-title">@lang('dashboard.card2')</h6>
+                                            <div class="card-body" style="background-color:#FF77FF">
+                                                <h6 class=" card-title">@lang('dashboard.card2')</h6>
                                                 <h5 class="text-center" id="totalLoan">{{ $pending_loan->count }}</h5>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="card" style="width: 18rem;">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color:#fed8b1">
                                                 <h5 class="card-title">@lang('dashboard.card3')</h5>
                                                 <h5 class="text-center" id="total_disbuse">{{ $disburse_amt->sum }}</h5>
                                             </div>
@@ -373,7 +373,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="card" style="width: 18rem;">
-                                            <div class="card-body">
+                                            <div class="card-body" style="background-color:#ffcccb">
                                                 <h5 class="card-title">@lang('dashboard.card4')</h5>
                                                 <h5 class="text-center"><span class="pending_data">{{$all_pending_loan->count}}</span></h5>
                                             </div>
@@ -409,10 +409,19 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="row">
+                                                    <div class="col-md-4"></div>
+                                                    <div class="col-md-8 roll_single_btn">
+                                                        <h4 class="roll_class" id="roll_bm">@lang('dashboard.role1') <span id="btn_bm">{{$bm_pending_loan->count }}</span>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="row">
                                                     <div class="col-md-4">
 
                                                     </div>
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-8 roll_single_btn">
                                                         <h4 class="roll_class" id="roll_am">@lang('dashboard.role2') <span id="btn_am">{{ $am_pending_loan->count }}</span>
                                                         </h4>
                                                     </div>
@@ -421,7 +430,7 @@
                                             <div class="col-md-3">
                                                 <div class="row">
                                                     <div class="col-md-4"></div>
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-8 roll_single_btn">
                                                         <h4 class="roll_class" id="roll_rm">@lang('dashboard.role3') <span id="btn_rm">{{$rm_pending_loan->count }}</span>
                                                         </h4>
                                                     </div>
@@ -430,17 +439,8 @@
                                             <div class="col-md-3">
                                                 <div class="row">
                                                     <div class="col-md-4"></div>
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-8 roll_single_btn">
                                                         <h4 class="roll_class" id="roll_dm">@lang('dashboard.role4') <span id="btn_dm">{{$dm_pending_loan->count }}</span>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="row">
-                                                    <div class="col-md-4"></div>
-                                                    <div class="col-md-8">
-                                                        <h4 class="roll_class" id="roll_bm">@lang('dashboard.role1') <span id="btn_bm">{{$bm_pending_loan->count }}</span>
                                                         </h4>
                                                     </div>
                                                 </div>
