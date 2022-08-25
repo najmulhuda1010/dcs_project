@@ -3017,12 +3017,19 @@ class LoanController extends Controller
         $proposeAmount = $db1->propos_amt;
 
         // work with celling data
+        $project = session('projectcode');
+        if ($project == '015') {
+            $projectcd = '15';
+        } else if ($project == '060') {
+            $projectcd = '60';
+        }
         $growth_rate = "HIGH";
         $cellingData = DB::table($db . '.celing_configs')
             ->select('limit_form', 'limit_to')
             ->where('approver', session('role_designation'))
-            ->where('growth_rate', $growth_rate)
+            ->where('growth_rate', $growth_rate)->where('projectcode', $projectcd)
             ->first();
+        //dd($cellingData);
         $limitFrom = $cellingData->limit_form;
         $limitTo = $cellingData->limit_to;
         if ($proposeAmount < $limitFrom or $proposeAmount > $limitTo) {
