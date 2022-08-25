@@ -2877,23 +2877,26 @@ class LoanController extends Controller
             ->where($db . '.loans.id', '=', $id)
             ->where($db . '.loans.projectcode', session('projectcode'))
             ->first();
+        if ($data) {
+            $data2 = json_decode($data->DynamicFieldValue);
 
-        $data2 = json_decode($data->DynamicFieldValue);
-        $rca = RcaTable::where(['loan_id' => $id])->first();
-        $admissionApi = '';
-        $admissionData = Admission::select('*')->where(['MemberId' => $data->erp_mem_id])->first();
-        if ($admissionData == null) {
-            $branchCode = $data->branchcode;
-            $CONo = $data->assignedpo;
-            $projectCode = $data->projectcode;
-            $OrgNo = $data->orgno;
-            $OrgMemNo = $data->orgmemno;
-            $url = "https://bracapitesting.brac.net/scapir/MemberList?BranchCode=$branchCode&CONo=$CONo&ProjectCode=$projectCode&UpdatedAt=2000-01-01%2000%3A00%3A00&Status=1&OrgNo=$OrgNo&OrgMemNo=$OrgMemNo&key=5d0a4a85-df7a-scapi-bits-93eb-145f6a9902ae";
-            $response = Http::get($url);
-            $admissionArray = $response->object();
-            $admissionApi = $admissionArray->data[0];
+            $rca = RcaTable::where(['loan_id' => $id])->first();
+            $admissionApi = '';
+            $admissionData = Admission::select('*')->where(['MemberId' => $data->erp_mem_id])->first();
+            if ($admissionData == null) {
+                $branchCode = $data->branchcode;
+                $CONo = $data->assignedpo;
+                $projectCode = $data->projectcode;
+                $OrgNo = $data->orgno;
+                $OrgMemNo = $data->orgmemno;
+                $url = "https://bracapitesting.brac.net/scapir/MemberList?BranchCode=$branchCode&CONo=$CONo&ProjectCode=$projectCode&UpdatedAt=2000-01-01%2000%3A00%3A00&Status=1&OrgNo=$OrgNo&OrgMemNo=$OrgMemNo&key=5d0a4a85-df7a-scapi-bits-93eb-145f6a9902ae";
+                $response = Http::get($url);
+                $admissionArray = $response->object();
+                $admissionApi = $admissionArray->data[0];
+            }
+            return view('loanApproval')->with('data', $data)->with('data2', $data2)->with('rca', $rca)->with('admissionApi', $admissionApi)->with('admissionData', $admissionData);
         }
-        return view('loanApproval')->with('data', $data)->with('data2', $data2)->with('rca', $rca)->with('admissionApi', $admissionApi)->with('admissionData', $admissionData);
+        return redirect('/operation/loan')->with('error', "Data doesn't exist");
     }
 
     public function assessmentInsertion($request)

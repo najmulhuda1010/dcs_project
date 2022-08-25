@@ -1359,7 +1359,7 @@
                                                 $tolerance = number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
                                                 }
                                                 else{
-                                                $tolerance =0;
+                                                $tolerance = 0;
                                                 }
                                                 @endphp
                                                 {{ $tolerance }}
