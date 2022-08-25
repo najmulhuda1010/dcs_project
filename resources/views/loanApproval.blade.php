@@ -1032,8 +1032,13 @@
                                             <td>
                                                 @if($rca->instal_proposloan!=null and $rca->monthly_cash!=null)
                                                 @php
-                                                $tolerance =
-                                                number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                if($rca->instal_proposloan !=0 and $rca->monthly_cash !=0)
+                                                {
+                                                $tolerance =number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $tolerance = 0;
+                                                }
                                                 @endphp
                                                 {{ $tolerance }}
                                                 @endif
@@ -1041,8 +1046,13 @@
                                             <td>
                                                 @if($rca->bm_instal_proposloan!=null and $rca->bm_monthly_cash!=null)
                                                 @php
-                                                $bmTolerance =
-                                                number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                if($rca->bm_instal_proposloan !=0 and $rca->bm_monthly_cash !=0)
+                                                {
+                                                $bmTolerance = number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $bmTolerance = 0;
+                                                }
                                                 @endphp
                                                 {{ $bmTolerance }}
                                                 @endif
@@ -1050,30 +1060,52 @@
                                             <td>
                                                 @if($rca->am_instal_proposloan!=null and $rca->am_monthly_cash!=null)
                                                 @php
+                                                if($rca->am_instal_proposloan !=0 and $rca->am_monthly_cash !=0)
+                                                {
                                                 $amTolerance =
                                                 number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $amTolerance = 0;
+                                                }
                                                 @endphp
                                                 {{ $amTolerance }}
                                                 @endif
                                             </td>
+
+                                            @php
+                                            $rmTolerance=0;
+                                            @endphp
                                             @if($rca->rm_instal_proposloan!=null and $rca->rm_monthly_cash!=null)
                                             @php
-                                            $rmTolerance =
-                                            number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                            if($rca->rm_instal_proposloan !=0 and $rca->rm_monthly_cash !=0)
+                                            {
+                                            $rmTolerance = number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                            }
                                             @endphp
+
                                             <td>{{ $rmTolerance }}</td>
+
                                             @elseif($rca->rm_instal_proposloan=null and $rca->rm_monthly_cash!=null)
                                             @php
-                                            $rmTolerance =
-                                            number_format(($rca->am_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                            if($rca->am_instal_proposloan !=0 and $rca->rm_monthly_cash !=0)
+                                            {
+                                            $rmTolerance = number_format(($rca->am_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                            }
                                             @endphp
+
                                             <td>{{ $rmTolerance }}</td>
+
                                             @elseif($rca->rm_instal_proposloan!=null and $rca->rm_monthly_cash=null)
                                             @php
-                                            $rmTolerance =
-                                            number_format(($rca->rm_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                            if($rca->rm_instal_proposloan !=0 and $rca->rm_instal_proposloan !=0)
+                                            {
+                                            $rmTolerance = number_format(($rca->rm_instal_proposloan/$rca->rm_instal_proposloan)*100,2);
+                                            }
                                             @endphp
+
                                             <td>{{ $rmTolerance }}</td>
+
                                             @else
                                             <td>
                                                 @if($rca->am_instal_proposloan!=null and $rca->am_monthly_cash!=null)
@@ -1322,8 +1354,13 @@
                                             <td>
                                                 @if($rca->instal_proposloan!=null and $rca->monthly_cash!=null)
                                                 @php
-                                                $tolerance =
-                                                number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                if($rca->instal_proposloan !=0 and $rca->monthly_cash !=0)
+                                                {
+                                                $tolerance = number_format(($rca->instal_proposloan/$rca->monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $tolerance =0;
+                                                }
                                                 @endphp
                                                 {{ $tolerance }}
                                                 @endif
@@ -1331,8 +1368,13 @@
                                             <td>
                                                 @if($rca->bm_instal_proposloan!=null and $rca->bm_monthly_cash!=null)
                                                 @php
-                                                $bmTolerance =
-                                                number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                if($rca->bm_instal_proposloan !=0 and $rca->bm_monthly_cash !=0)
+                                                {
+                                                $bmTolerance = number_format(($rca->bm_instal_proposloan/$rca->bm_monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $bmTolerance = 0;
+                                                }
                                                 @endphp
                                                 {{ $bmTolerance }}
                                                 @endif
@@ -1340,8 +1382,13 @@
                                             <td>
                                                 @if($rca->am_instal_proposloan!=null and $rca->am_monthly_cash!=null)
                                                 @php
-                                                $amTolerance =
-                                                number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                                if($rca->bm_instal_proposloan !=0 and $rca->bm_monthly_cash !=0)
+                                                {
+                                                $amTolerance = number_format(($rca->am_instal_proposloan/$rca->am_monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                amTolerance = 0;
+                                                }
                                                 @endphp
                                                 {{ $amTolerance }}
                                                 @endif
@@ -1349,8 +1396,13 @@
                                             <td>
                                                 @if($rca->rm_instal_proposloan!=null and $rca->rm_monthly_cash!=null)
                                                 @php
-                                                $rmTolerance =
-                                                number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                                if($rca->rm_instal_proposloan !=0 and $rca->rm_monthly_cash !=0)
+                                                {
+                                                $rmTolerance = number_format(($rca->rm_instal_proposloan/$rca->rm_monthly_cash)*100,2);
+                                                }
+                                                else{
+                                                $rmTolerance = 0;
+                                                }
                                                 @endphp
                                                 {{ $rmTolerance }}
                                                 @endif
