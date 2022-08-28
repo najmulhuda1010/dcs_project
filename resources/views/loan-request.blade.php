@@ -123,15 +123,6 @@
 
                                     </div>
                                     <div class="form-row">
-                                        <div class="col-md-3 mb-3">
-                                            <label class="ml-2" for="branch_wise_search">@lang('loan.branchSearch')</label>
-                                            <select id="branch_wise_search" name="branch_wise_search" class="form-control">
-                                                <option value="">Select</option>
-                                                @foreach($value as $row)
-                                                <option value="{{$row->branch_id}}">{{$row->branch_id}}-{{$row->branch_name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         @php
                                         $month = date('m');
                                         $day = date('d');
@@ -192,15 +183,6 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="col-md-3">
-                                            <label class="ml-2" for="branch_wise_search">@lang('loan.branchSearch')</label>
-                                            <select style=" height:50px;" id="branch_wise_search" name="branch_wise_search" class="form-control pb-2">
-                                                <option value="">Select</option>
-                                                @foreach($value as $row)
-                                                <option value="{{$row->branch_id}}">{{$row->branch_id}}-{{$row->branch_name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         @php
                                         $month = date('m');
                                         $day = date('d');
@@ -263,15 +245,6 @@
 
                                     </div>
                                     <div class="form-row">
-                                        <div class="col-md-3 mb-3">
-                                            <label class="ml-2" for="branch_wise_search">@lang('loan.branchSearch')</label>
-                                            <select style="" id="branch_wise_search" name="branch_wise_search" class="form-control pb-2">
-                                                <option value="">Select</option>
-                                                @foreach($value as $row)
-                                                <option value="{{$row->branch_id}}">{{$row->branch_id}}-{{$row->branch_name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         @php
                                         $month = date('m');
                                         $day = date('d');
